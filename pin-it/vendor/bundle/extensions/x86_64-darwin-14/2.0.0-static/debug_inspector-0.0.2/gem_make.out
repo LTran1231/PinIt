@@ -1,0 +1,12 @@
+/Users/LTran/.rbenv/versions/2.0.0-p481/bin/ruby -r ./siteconf20150629-51430-pphl2q.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20150629-51430-yt673q
+installing default debug_inspector libraries
