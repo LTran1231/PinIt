@@ -11,13 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150703212409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-=======
-ActiveRecord::Schema.define(version: 20150703212409) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -31,6 +28,5 @@ ActiveRecord::Schema.define(version: 20150703212409) do
     t.string   "twitter"
     t.string   "avatar"
   end
->>>>>>> 8dbe79b8f2130a3e58ac779a288351d2854e34e9
 
 end
