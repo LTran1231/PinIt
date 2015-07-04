@@ -15,3 +15,30 @@
 //= require bootstrap-sprockets 
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+	// fbLogin();
+	
+});
+
+var myRef = new Firebase("https://pinasyougo.firebaseio.com");
+var authClient = new FirebaseSimpleLogin(myRef, function(error, user) {
+  if (error) {
+    // an error occurred while attempting login
+    console.log(error);
+  } else if (user) {
+    // user authenticated with Firebase
+    console.log("User ID: " + user.uid + ", Provider: " + user.provider);
+  } else {
+    // user is logged out
+  }
+});
+
+
+// var modalTrigger = function(){
+// 	$("#modal_trigger").leanModal({
+// 	 	top : 200, 
+// 	 	overlay : 0.6, 
+// 	 	closeButton: ".modal_close" 
+// 	});
+// }

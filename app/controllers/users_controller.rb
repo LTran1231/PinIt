@@ -12,9 +12,6 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 
-	def edit
-# 		@article = Article.find(params[:id])
-	end
 
 	# CREATE A NEW USER
 	def create
@@ -26,14 +23,20 @@ class UsersController < ApplicationController
 		end
 	end
 
-	def update
-# 		@article = Article.find(params[:id])
+	def edit
+		@user = User.find(params[:id])
+	end
 
-# 		if @article.update(article_params)
-# 			redirect_to @article
-# 		else
-# 			render 'edit'
-# 		end
+
+	def update
+		@user = User.find(params[:id])
+		p params
+		if @user.update_attributes(user_params)
+			p "3" *100
+			redirect_to @user
+		else
+			render 'edit'
+		end
 	end
 
 	def destroy
@@ -45,11 +48,18 @@ class UsersController < ApplicationController
 
 private
 	def user_params
-		params.require(:user).permit(:name, :email, :password)
+		params.require(:user).permit(
+			:avatar, 
+			:name, 
+			:email, 
+			:facebook_url, 
+			:google_url, 
+			:instagram, 
+			:twitter
+			)
 	end
 
 end
-
 
 
 # http_basic_authenticate_with name: 'dhh', password: 'secret',

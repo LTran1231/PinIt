@@ -1,1 +1,41 @@
-edit form goes here
+<div>
+	<%= form_for @user, method: :patch do |f| %>
+
+    <%= render 'shared/error_messages' %>
+
+    Avatar: <%= f.url_field :avatar, class: "form-control" %><br/>
+    Name: <%= f.text_field :name, class: "form-control" %><br/>
+  	Email: <%= f.email_field :email , class: "form-control" %><br/>
+  	
+
+    Social Media
+    <br/>
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">https://facebook.com/</span>
+    	<%= f.text_field :facebook_url , class: "form-control", "aria-describedby" => "basic-addon1" %>
+    </div>
+    <br/>
+
+
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon2">https://plus.google.com/</span>
+    	<%= f.text_field :google_url , class: "form-control", "aria-describedby" => "basic-addon2" %>
+    </div>
+    <br/>
+
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon3">https://instagram.com/</span>
+      <%= f.text_field :instagram , class: "form-control", "aria-describedby" => "basic-addon3" %>
+    </div>
+    <br/>
+
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon4">https://twitter.com/</span>
+      <%= f.text_field :twitter , class: "form-control", "aria-describedby" => "basic-addon4" %>
+    </div>    
+    <br/>
+
+    <%= f.submit "save changes", class: "btn btn-default" %>
+    <%= link_to "Back", user_path, class: "btn btn-default" %>
+  <% end %>
+</div>
