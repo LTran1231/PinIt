@@ -18,6 +18,7 @@
 
 $(function() {
 	// fbLogin();
+  // callingEditProfileForm();
 	
 });
 
@@ -34,6 +35,16 @@ var authClient = new FirebaseSimpleLogin(myRef, function(error, user) {
   }
 });
 
+var callingEditProfileForm = function(){
+  $('header.container').on('click', 'li.edit-profile', function(event){
+    event.preventDefault();
+    var target = $(event.target);
+
+      ('.profile-edit-div').show();
+      debugger;
+
+  })
+}
 
 // var modalTrigger = function(){
 // 	$("#modal_trigger").leanModal({

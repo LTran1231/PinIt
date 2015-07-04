@@ -1,0 +1,8 @@
+<% content_for :profile do %>
+	<%= render template: "users/show" %>
+
+	<article class="profile-three-fourth-right">
+		<%= content_for?(:users_content) ? yield(:users_content) : yield %>
+	</article>
+<% end %>
+<%= render template: "layouts/application" %>

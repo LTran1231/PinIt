@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	layout "profile", except: [:new, :create, :show]
+
 	def index
 # 		@articles = Article.all		
 	end
@@ -30,9 +32,7 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
-		p params
 		if @user.update_attributes(user_params)
-			p "3" *100
 			redirect_to @user
 		else
 			render 'edit'
