@@ -1,4 +1,4 @@
-
+<div id="dialog-login", title="Login user">
 <h1>Log in</h1>
 <%= form_for :session, url: login_path do |f| %>
 	<%= render 'shared/flash_messages' %>
@@ -8,8 +8,11 @@
 	<%= f.password_field :password %>
 	<%= f.submit "Login" %>
 <% end %>
-<a href="#" class="facebook-login">Login with Facebook</a>
+
+
+<a href="#" class="facebook-login bt-social" title="facebook">Login with Facebook</a>
 New user? <%= link_to "Signup now", new_user_path %>
+</div>
 
 
 

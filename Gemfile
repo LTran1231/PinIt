@@ -9,7 +9,7 @@ gem 'pg'
 gem 'bootstrap-sass'
 gem 'sass-rails', '~> 5.0'
 gem 'font-awesome-rails'
-
+gem 'awesome_print'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

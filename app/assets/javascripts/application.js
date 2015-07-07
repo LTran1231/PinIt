@@ -1,15 +1,4 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file.
-//
-// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
-//
+
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets 
@@ -17,39 +6,73 @@
 //= require_tree .
 
 $(function() {
+  loginWithFacebook();
 	// fbLogin();
   // callingEditProfileForm();
-	
+	// loginUser();
+ //  registerNewUser();
+
 });
 
-var myRef = new Firebase("https://pinasyougo.firebaseio.com");
-var authClient = new FirebaseSimpleLogin(myRef, function(error, user) {
-  if (error) {
-    // an error occurred while attempting login
-    console.log(error);
-  } else if (user) {
-    // user authenticated with Firebase
-    console.log("User ID: " + user.uid + ", Provider: " + user.provider);
-  } else {
-    // user is logged out
-  }
-});
 
-var callingEditProfileForm = function(){
-  $('header.container').on('click', 'li.edit-profile', function(event){
+var myFirebaseRef = new Firebase("https://pinasyougo.firebaseio.com/");
+
+// login with social media
+// returns a promise
+// var auth = function(provider){
+//   var deferred = $.Deferred();
+//   myFirebaseRef.authWithOAuthPopup(provider, function(error, user) {
+//   if (error) 
+//     console.log('Authentication error: ', error);
+//     deferred.reject(error);
+//   if (user) 
+//     console.log('User ' + user.id + ' authenticated via the ' + user.provider + ' provider!');
+//     deferred.resolve(user);
+//   })
+//   return deferred.promise();
+// };
+
+var loginWithFacebook = function(){
+  $('#dialog-login').on('click', '.bt-social', function(event){
     event.preventDefault();
-    var target = $(event.target);
+    var $currentButton = $(event.target);
+    var provider = $currentButton.attr('title');
+    // var socialLoginPromise = auth(provider); 
+   
+    myFirebaseRef.authWithOAuthPopup("facebook", function(error, authData) {
+    
+      if (error) 
+        console.log("Login Failed!", error);
+      else 
+      // the access token will allow us to make Open Graph API calls
+      myFirebaseRef.child("users").child(authData.uid).set({
+        provider: authData.provider,
+        name: authData.facebook.displayName
 
-      ('.profile-edit-div').show();
-      debugger;
+      })
+
+      var user = authData.facebook;
+
+      var request = $.ajax ({
+        url: '/login_via_social_media',
+        type: 'post',
+        data: data.serialize()
+
+      })
+
+      // $.get( "/login_via_social_media", function(user) {
+      //   user
+
+      //   debugger;
+      //   $( "#"+ name).html( data );
+      //   alert( "Load was performed." );
+      // });
+    })
 
   })
-}
+};
 
-// var modalTrigger = function(){
-// 	$("#modal_trigger").leanModal({
-// 	 	top : 200, 
-// 	 	overlay : 0.6, 
-// 	 	closeButton: ".modal_close" 
-// 	});
-// }
+
+
+
+
