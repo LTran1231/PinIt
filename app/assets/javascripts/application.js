@@ -39,7 +39,7 @@ var loginWithFacebook = function(){
     var provider = $currentButton.attr('title');
     // var socialLoginPromise = auth(provider); 
    
-    myFirebaseRef.authWithOAuthPopup("facebook", function(error, authData) {
+    myFirebaseRef.authWithOAuthPopup(provider, function(error, authData) {
     
       if (error) 
         console.log("Login Failed!", error);
@@ -50,13 +50,12 @@ var loginWithFacebook = function(){
         name: authData.facebook.displayName
 
       })
-
-      var user = authData.facebook;
+      var user = authData;
 
       var request = $.ajax ({
         url: '/login_via_social_media',
-        type: 'post',
-        data: data.serialize()
+        type: 'get',
+        data: user
 
       })
 

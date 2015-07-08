@@ -10,4 +10,16 @@ class User < ActiveRecord::Base
                     
   has_secure_password
   validates :password, length: { minimum: 6 }, allow_nil: true
+
+  def self.create_from_provider(user)
+    name = "#{user["name"]}"
+    email = "#{user["email"]}"
+    password = "#{user["password"]}"
+    existing_user = self.where(email: email).first
+    if existing_user
+      existing_user
+    else
+      self.create(name: name, email: email, password: password)
+    end
+  end
 end

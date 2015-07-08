@@ -4,11 +4,13 @@ class SessionsController < ApplicationController
   end
 
   def login_via_social_media
-    user = user
+    user = params
     byebug
-    session[:user_id] = user.id
-    p session
+    user = User.create_from_provider(user)
+    session[:user_id] = user[:id]
+    # p session
     redirect_to root_path
+
   end
 
   def create
