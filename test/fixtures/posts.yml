@@ -3,13 +3,13 @@
 one:
   title: MyString
   content: MyText
-  pin_id: 
+  location: 
   travel_date: 2015-07-08
   user_id: 
 
 two:
   title: MyString
   content: MyText
-  pin_id: 
+  location: 
   travel_date: 2015-07-08
   user_id: 
