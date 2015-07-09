@@ -4,13 +4,12 @@ class SessionsController < ApplicationController
   end
 
   def login_via_social_media
-    user = params
-    byebug
-    user = User.create_from_provider(user)
-    session[:user_id] = user[:id]
-    # p session
-    redirect_to root_path
-
+    user = params[:user]
+    provider = params[:provider]
+    @user = User.create_from_provider(user, provider)
+    session[:user_id] = @user.id
+    render json: current_user
+   
   end
 
   def create
@@ -34,3 +33,16 @@ private
 		params.require(:user).permit(:email, :password)
 	end
 end
+def create
+    @post = Post.new(post_params)
+
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.json { render :show, status: :created, location: @post }
+      else
+        format.html { render :new }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
+  end

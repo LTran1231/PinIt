@@ -7,6 +7,7 @@ gem 'rails', '4.2.3'
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass'
+gem 'bootstrap-social-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'font-awesome-rails'
 gem 'awesome_print'
