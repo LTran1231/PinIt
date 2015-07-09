@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'signup' => 'users#new'
   get 'login'  => 'sessions#new'
-  get 'login_via_social_media' => 'sessions#login_via_social_media'
+  post 'login_via_social_media' => 'sessions#login_via_social_media'
 
   post 'login' => 'sessions#create'
 

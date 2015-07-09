@@ -64097,3 +64097,1109 @@ Processing by HomeController#index as HTML
   Rendered home/index.html.erb within layouts/application (2.3ms)
   [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
 Completed 200 OK in 2526ms (Views: 2519.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2015-07-08 20:31:35 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.7ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 1065ms (Views: 1041.0ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/assets/import_sass_files.self-c171cee71efe96080b9b96abbfeb26dbb6758b4b9c7d465c57934fbcecb52a93.css?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/profile_layout.self-6754241fc6ab6595dd998995e3fd9036f25db632b2158f8ebc3d32bc9a81fe20.css?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/sessions.self-66222120c24bab65045d9dfb16b2b29b0b6067ee8f7ef074254fbd3e976b4fdc.js?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started GET "/assets/application.self-538d6440534fa5f615e8a26932792a82a2e4a33a97886e2d815eab8fc216d415.js?body=1" for ::1 at 2015-07-08 20:31:37 -0700
+
+
+Started DELETE "/logout" for ::1 at 2015-07-08 20:31:42 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"SuWYYqzoAHowgqOZYxlZHDkYkbBBTCCXSdVJzC5K/hwaVYSjl94u7A2UqGXt/HdUtNdtr9+TBWH90Vz54qcxqg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-07-08 20:31:42 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 121ms (Views: 120.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-07-08 20:31:44 -0700
+Processing by SessionsController#new as HTML
+  Rendered shared/_flash_messages.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 216ms (Views: 215.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2?v=4.3.0" for ::1 at 2015-07-08 20:31:44 -0700
+
+
+Started GET "/login" for ::1 at 2015-07-08 20:31:46 -0700
+Processing by SessionsController#new as HTML
+  Rendered shared/_flash_messages.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 242ms (Views: 240.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-08 20:31:46 -0700
+
+
+Started GET "/assets/profile_layout.self-6754241fc6ab6595dd998995e3fd9036f25db632b2158f8ebc3d32bc9a81fe20.css?body=1" for ::1 at 2015-07-08 20:31:46 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-08 20:31:46 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-08 20:31:46 -0700
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-07-08 20:31:46 -0700
+
+
+Started GET "/assets/import_sass_files.self-c171cee71efe96080b9b96abbfeb26dbb6758b4b9c7d465c57934fbcecb52a93.css?body=1" for ::1 at 2015-07-08 20:31:46 -0700
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-07-08 20:31:47 -0700
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-07-08 20:31:47 -0700
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-07-08 20:31:47 -0700
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-07-08 20:31:47 -0700
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-07-08 20:31:47 -0700
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-07-08 20:31:47 -0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-07-08 20:31:47 -0700
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-07-08 20:31:47 -0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-07-08 20:31:47 -0700
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-07-08 20:31:47 -0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-07-08 20:31:47 -0700
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-07-08 20:31:47 -0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-07-08 20:31:47 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-08 20:31:47 -0700
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-08 20:31:47 -0700
+
+
+Started GET "/assets/sessions.self-66222120c24bab65045d9dfb16b2b29b0b6067ee8f7ef074254fbd3e976b4fdc.js?body=1" for ::1 at 2015-07-08 20:31:47 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-08 20:31:47 -0700
+
+
+Started GET "/assets/application.self-538d6440534fa5f615e8a26932792a82a2e4a33a97886e2d815eab8fc216d415.js?body=1" for ::1 at 2015-07-08 20:31:47 -0700
+
+
+Started GET "/assets/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2?v=4.3.0" for ::1 at 2015-07-08 20:31:47 -0700
+
+
+Started POST "/login_via_social_media" for ::1 at 2015-07-08 20:31:49 -0700
+Processing by SessionsController#login_via_social_media as */*
+  Parameters: {"user"=>{"id"=>"10206973757603562", "accessToken"=>"CAAN1YfX79icBAEqZCZB9kmQTwtqhrORb45q6ZAcUyvqEBMSOpHa3l02hfeRZBUnKrivjknLyUyWLvVjmHJxAKZC425UN876LxqfG1ZA8FicyJoTOYSwpj3F9p98WBUUuv9wpoGV88c0AnvZAORvsScldlhYkIbWK1tVWyL2r2LImCMhZAqSYMlCAoT9C7eKwEpZAzI6K11axpNumpRkdziQG3", "displayName"=>"Le Tran", "email"=>"tle_tran@yahoo.com", "cachedUserProfile"=>{"id"=>"10206973757603562", "name"=>"Le Tran", "last_name"=>"Tran", "first_name"=>"Le", "gender"=>"female", "birthday"=>"12/31/1990", "link"=>"https://www.facebook.com/app_scoped_user_id/10206973757603562/", "email"=>"tle_tran@yahoo.com", "picture"=>{"data"=>{"is_silhouette"=>"false", "url"=>"https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xtf1/v/t1.0-1/p100x100/11014814_10206064482432251_4623366158647941657_n.jpg?oh=daa9353ebd207ef79949d0a3d4a4fa8f&oe=56291499&__gda__=1444472335_10444f8cba7a1a275a6ee2f20e9165e7"}}, "age_range"=>{"min"=>"21"}, "locale"=>"en_US", "timezone"=>"-7"}, "profileImageURL"=>"https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xtf1/v/t1.0-1/p100x100/11014814_10206064482432251_4623366158647941657_n.jpg?oh=daa9353ebd207ef79949d0a3d4a4fa8f&oe=56291499&__gda__=1444472335_10444f8cba7a1a275a6ee2f20e9165e7"}, "provider"=>"facebook"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "tle_tran@yahoo.com"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 7ms (Views: 1.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/5" for ::1 at 2015-07-08 20:31:49 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 225ms (Views: 221.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/5" for ::1 at 2015-07-08 20:33:13 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered users/show.html.erb within layouts/application (3.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 356ms (Views: 324.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/import_sass_files.self-c171cee71efe96080b9b96abbfeb26dbb6758b4b9c7d465c57934fbcecb52a93.css?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/profile_layout.self-6754241fc6ab6595dd998995e3fd9036f25db632b2158f8ebc3d32bc9a81fe20.css?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/sessions.self-66222120c24bab65045d9dfb16b2b29b0b6067ee8f7ef074254fbd3e976b4fdc.js?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/application.self-538d6440534fa5f615e8a26932792a82a2e4a33a97886e2d815eab8fc216d415.js?body=1" for ::1 at 2015-07-08 20:33:14 -0700
+
+
+Started GET "/assets/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2?v=4.3.0" for ::1 at 2015-07-08 20:33:15 -0700
+
+
+Started DELETE "/logout" for ::1 at 2015-07-08 20:33:17 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9x01Okt5JbgZfUN7kVG/FfvqQbuF6ZNqfByaEp+7zJunrSn7cE8LLiRrSIcftJFddiW9pBs2tpzIGI8nU1YDLQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-07-08 20:33:17 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 208ms (Views: 207.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-07-08 20:33:20 -0700
+Processing by SessionsController#new as HTML
+  Rendered shared/_flash_messages.html.erb (0.2ms)
+  Rendered sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 190ms (Views: 189.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-07-08 20:33:59 -0700
+Processing by SessionsController#new as HTML
+  Rendered shared/_flash_messages.html.erb (0.2ms)
+  Rendered sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 162ms (Views: 161.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/profile_layout.self-6754241fc6ab6595dd998995e3fd9036f25db632b2158f8ebc3d32bc9a81fe20.css?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/import_sass_files.self-c171cee71efe96080b9b96abbfeb26dbb6758b4b9c7d465c57934fbcecb52a93.css?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/sessions.self-66222120c24bab65045d9dfb16b2b29b0b6067ee8f7ef074254fbd3e976b4fdc.js?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/application.self-538d6440534fa5f615e8a26932792a82a2e4a33a97886e2d815eab8fc216d415.js?body=1" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started GET "/assets/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2?v=4.3.0" for ::1 at 2015-07-08 20:33:59 -0700
+
+
+Started POST "/login_via_social_media" for ::1 at 2015-07-08 20:34:01 -0700
+Processing by SessionsController#login_via_social_media as */*
+  Parameters: {"user"=>{"id"=>"10206973757603562", "accessToken"=>"CAAN1YfX79icBAFv6Qqedv1bnYO3MqcPiPIblyk3AOtBkZAch1ujGsUvEXOHBZB6CJGmgbPP0cl1tMD2K0XfDfuZB8G6FMeX2uwwdteGhzKvE5oIqcSDLjQL0BbaGg8p1bYMaZCPLT0x2ZAYeKxPupHNXCfuijvhwIxuZB1evokV1epLHjljuZCShJWZAxZC1riNzcLb4vyRY4a7KKCj97Q2sv", "displayName"=>"Le Tran", "email"=>"tle_tran@yahoo.com", "cachedUserProfile"=>{"id"=>"10206973757603562", "name"=>"Le Tran", "last_name"=>"Tran", "first_name"=>"Le", "gender"=>"female", "birthday"=>"12/31/1990", "link"=>"https://www.facebook.com/app_scoped_user_id/10206973757603562/", "email"=>"tle_tran@yahoo.com", "picture"=>{"data"=>{"is_silhouette"=>"false", "url"=>"https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xtf1/v/t1.0-1/p100x100/11014814_10206064482432251_4623366158647941657_n.jpg?oh=daa9353ebd207ef79949d0a3d4a4fa8f&oe=56291499&__gda__=1444472335_10444f8cba7a1a275a6ee2f20e9165e7"}}, "age_range"=>{"min"=>"21"}, "locale"=>"en_US", "timezone"=>"-7"}, "profileImageURL"=>"https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xtf1/v/t1.0-1/p100x100/11014814_10206064482432251_4623366158647941657_n.jpg?oh=daa9353ebd207ef79949d0a3d4a4fa8f&oe=56291499&__gda__=1444472335_10444f8cba7a1a275a6ee2f20e9165e7"}, "provider"=>"facebook"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "tle_tran@yahoo.com"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 27ms (Views: 0.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/users/5" for ::1 at 2015-07-08 20:34:01 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 282ms (Views: 279.4ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/logout" for ::1 at 2015-07-08 20:34:37 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YqjQB0RAS5vCWFGaM0aPRum//qUPmu3+iEJT5yezuPgyGMzGf3ZlDf9OWma9o6EOZHACupFFyAg8RkbS6153Tg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-07-08 20:34:37 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 150ms (Views: 149.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-07-08 20:34:44 -0700
+Processing by SessionsController#new as HTML
+  Rendered shared/_flash_messages.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 281ms (Views: 280.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-07-08 20:34:52 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xct42Qs/W+/cX6IR6iXA0uSQZ+91vLwXHPLI4fvGW3GVe2QYMAl1eeFJqe1kwO6aaV+b8OtjmeGo9t3UNyuUxw==", "session"=>{"email"=>"lele@yahoo.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (3.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "lele@yahoo.com"]]
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 99ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/users/2" for ::1 at 2015-07-08 20:34:53 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 130ms (Views: 127.5ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/logout" for ::1 at 2015-07-08 20:35:05 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7NWl6zVeAsNjY8h5s7oqwHLuis8cK6palu62nylcqwa8ZbkqDmgsVV51w4U9XwSI/yF20IL0j6wi6qOq5bFksA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-07-08 20:35:05 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 205ms (Views: 204.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-07-08 20:35:24 -0700
+Processing by SessionsController#new as HTML
+  Rendered shared/_flash_messages.html.erb (0.2ms)
+  Rendered sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 239ms (Views: 237.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-07-08 20:35:32 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PcqvLL4LcL/CseAZcv4Dz6o57A5t0jbPbV9GgVwr+ihterPthT1eKf+n6+X8Gy2HJ/YQEfMNEznZW1O0kMY1ng==", "session"=>{"email"=>"lele@yahoo.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "lele@yahoo.com"]]
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 123ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/users/2" for ::1 at 2015-07-08 20:35:32 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 200 OK in 227ms (Views: 223.5ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/logout" for ::1 at 2015-07-08 20:35:35 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0D2pqvLipBzABHVTvBiwaoKCjvuX6CCOr0SIaqYbS0OAjbVrydSKiv0Sfq8y/Z4iD01y5Ak3BXgbQJ1favaE9Q=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-07-08 20:35:35 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 118ms (Views: 116.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-07-08 20:35:59 -0700
+Processing by SessionsController#new as HTML
+  Rendered shared/_flash_messages.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 219ms (Views: 218.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-07-08 20:36:04 -0700
+Processing by SessionsController#new as HTML
+  Rendered shared/_flash_messages.html.erb (0.1ms)
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 122ms (Views: 121.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/profile_layout.self-6754241fc6ab6595dd998995e3fd9036f25db632b2158f8ebc3d32bc9a81fe20.css?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/import_sass_files.self-c171cee71efe96080b9b96abbfeb26dbb6758b4b9c7d465c57934fbcecb52a93.css?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/sessions.self-66222120c24bab65045d9dfb16b2b29b0b6067ee8f7ef074254fbd3e976b4fdc.js?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/application.self-538d6440534fa5f615e8a26932792a82a2e4a33a97886e2d815eab8fc216d415.js?body=1" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started GET "/assets/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2?v=4.3.0" for ::1 at 2015-07-08 20:36:04 -0700
+
+
+Started POST "/login_via_social_media" for ::1 at 2015-07-08 20:36:07 -0700
+Processing by SessionsController#login_via_social_media as */*
+  Parameters: {"user"=>{"id"=>"10206973757603562", "accessToken"=>"CAAN1YfX79icBACp8pTuhsjvmgntBsaIiBKQbcvGuhOUpwVIc8MyPTZC3drBm4SK2gCz3HxsZB85GPpfRygnvWC8ffaAz2jS6XBRWhY01LjDLFXEt1jZCUy7Tn2JnhDzpuqNUk2LjRiQ9t44WkvXZCxZBF1IoZAoW4vSNNVT8vkWpLkuSNQ80wH1kU5CU1VUs9YSBnkSMBhU8SkR0pHRibB", "displayName"=>"Le Tran", "email"=>"tle_tran@yahoo.com", "cachedUserProfile"=>{"id"=>"10206973757603562", "name"=>"Le Tran", "last_name"=>"Tran", "first_name"=>"Le", "gender"=>"female", "birthday"=>"12/31/1990", "link"=>"https://www.facebook.com/app_scoped_user_id/10206973757603562/", "email"=>"tle_tran@yahoo.com", "picture"=>{"data"=>{"is_silhouette"=>"false", "url"=>"https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xtf1/v/t1.0-1/p100x100/11014814_10206064482432251_4623366158647941657_n.jpg?oh=daa9353ebd207ef79949d0a3d4a4fa8f&oe=56291499&__gda__=1444472335_10444f8cba7a1a275a6ee2f20e9165e7"}}, "age_range"=>{"min"=>"21"}, "locale"=>"en_US", "timezone"=>"-7"}, "profileImageURL"=>"https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xtf1/v/t1.0-1/p100x100/11014814_10206064482432251_4623366158647941657_n.jpg?oh=daa9353ebd207ef79949d0a3d4a4fa8f&oe=56291499&__gda__=1444472335_10444f8cba7a1a275a6ee2f20e9165e7"}, "provider"=>"facebook"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "tle_tran@yahoo.com"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/5" for ::1 at 2015-07-08 20:36:07 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 267ms (Views: 264.7ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/logout" for ::1 at 2015-07-08 20:36:28 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ukr6S4fIn5j0DYuwpxLJeV5QQCDxhZ4L7mnvQN7k9cbq+uaKvP6xDskbgEwp9+cx05+8P29au/1abfp1Egk6cA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-07-08 20:36:28 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 135ms (Views: 134.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-07-08 20:37:23 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 222ms (Views: 221.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/import_sass_files.self-c171cee71efe96080b9b96abbfeb26dbb6758b4b9c7d465c57934fbcecb52a93.css?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/profile_layout.self-6754241fc6ab6595dd998995e3fd9036f25db632b2158f8ebc3d32bc9a81fe20.css?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/sessions.self-66222120c24bab65045d9dfb16b2b29b0b6067ee8f7ef074254fbd3e976b4fdc.js?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/assets/application.self-538d6440534fa5f615e8a26932792a82a2e4a33a97886e2d815eab8fc216d415.js?body=1" for ::1 at 2015-07-08 20:37:23 -0700
+
+
+Started GET "/login" for ::1 at 2015-07-08 20:37:25 -0700
+Processing by SessionsController#new as HTML
+  Rendered shared/_flash_messages.html.erb (0.2ms)
+  Rendered sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 202ms (Views: 201.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2?v=4.3.0" for ::1 at 2015-07-08 20:37:25 -0700
+
+
+Started GET "/login" for ::1 at 2015-07-08 20:38:37 -0700
+Processing by SessionsController#new as HTML
+  Rendered shared/_flash_messages.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 453ms (Views: 451.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/profile_layout.self-6754241fc6ab6595dd998995e3fd9036f25db632b2158f8ebc3d32bc9a81fe20.css?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/import_sass_files.self-c171cee71efe96080b9b96abbfeb26dbb6758b4b9c7d465c57934fbcecb52a93.css?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/sessions.self-8679f950fd77442fbec800f0d35ef24e794e72c9d070647f5be1cd77601dfbe9.js?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/application.self-538d6440534fa5f615e8a26932792a82a2e4a33a97886e2d815eab8fc216d415.js?body=1" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started GET "/assets/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2?v=4.3.0" for ::1 at 2015-07-08 20:38:38 -0700
+
+
+Started POST "/login_via_social_media" for ::1 at 2015-07-08 20:38:40 -0700
+Processing by SessionsController#login_via_social_media as */*
+  Parameters: {"user"=>{"id"=>"10206973757603562", "accessToken"=>"CAAN1YfX79icBABAw4nnWoZC9rZC03ZBqRTjq3BQ4wdfwVwDhe1ZCsz9nOEja7qHgtF6cZCaOHb88HYqvYm0LYooFtO7c9rva3bPK5npy4kLxr3ULrTV5YymgHZAuaFIBnUyodjxRjMCiwZCpN4ZCgkeElQ6BnYZAM2LxZCZBB7Guy9FZB1WZCDUt0lGUzATDAfhTPc4TAB2IRVLWDspFPn7V2ys4P", "displayName"=>"Le Tran", "email"=>"tle_tran@yahoo.com", "cachedUserProfile"=>{"id"=>"10206973757603562", "name"=>"Le Tran", "last_name"=>"Tran", "first_name"=>"Le", "gender"=>"female", "birthday"=>"12/31/1990", "link"=>"https://www.facebook.com/app_scoped_user_id/10206973757603562/", "email"=>"tle_tran@yahoo.com", "picture"=>{"data"=>{"is_silhouette"=>"false", "url"=>"https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xtf1/v/t1.0-1/p100x100/11014814_10206064482432251_4623366158647941657_n.jpg?oh=daa9353ebd207ef79949d0a3d4a4fa8f&oe=56291499&__gda__=1444472335_10444f8cba7a1a275a6ee2f20e9165e7"}}, "age_range"=>{"min"=>"21"}, "locale"=>"en_US", "timezone"=>"-7"}, "profileImageURL"=>"https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xtf1/v/t1.0-1/p100x100/11014814_10206064482432251_4623366158647941657_n.jpg?oh=daa9353ebd207ef79949d0a3d4a4fa8f&oe=56291499&__gda__=1444472335_10444f8cba7a1a275a6ee2f20e9165e7"}, "provider"=>"facebook"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "tle_tran@yahoo.com"]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 29ms (Views: 1.4ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/users/5" for ::1 at 2015-07-08 20:38:40 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 235ms (Views: 232.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/5/edit" for ::1 at 2015-07-08 20:38:44 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered shared/_error_messages.html.erb (18.4ms)
+  Rendered users/edit.html.erb within layouts/profile (28.4ms)
+  Rendered users/show.html.erb (1.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered layouts/application.html.erb (195.1ms)
+Completed 200 OK in 243ms (Views: 240.0ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/logout" for ::1 at 2015-07-08 20:38:48 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZMlP3TQE0B4FecFIcqyro+ilKVnMT2dBd4ouPhkbWIo0eVMcDzL+iDhvyrT8SYXrZWrVRlKQQrfDjjsL1faXPA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-07-08 20:38:48 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 132ms (Views: 131.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-07-08 20:38:50 -0700
+Processing by SessionsController#new as HTML
+  Rendered shared/_flash_messages.html.erb (0.1ms)
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 194ms (Views: 193.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-07-08 20:39:44 -0700
+Processing by SessionsController#new as HTML
+  Rendered shared/_flash_messages.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 494ms (Views: 491.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/profile_layout.self-6754241fc6ab6595dd998995e3fd9036f25db632b2158f8ebc3d32bc9a81fe20.css?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/import_sass_files.self-c171cee71efe96080b9b96abbfeb26dbb6758b4b9c7d465c57934fbcecb52a93.css?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/sessions.self-1aea19b292754d7ecd60c51b878762624916e7b410e0b3db009e48893f0db644.js?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/application.self-538d6440534fa5f615e8a26932792a82a2e4a33a97886e2d815eab8fc216d415.js?body=1" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started GET "/assets/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2?v=4.3.0" for ::1 at 2015-07-08 20:39:45 -0700
+
+
+Started POST "/login_via_social_media" for ::1 at 2015-07-08 20:39:50 -0700
+Processing by SessionsController#login_via_social_media as */*
+  Parameters: {"user"=>{"id"=>"10206973757603562", "accessToken"=>"CAAN1YfX79icBACa8m7coW19EM7nfFVdSa8NGHMnpGDvl7vAmuqwer9ILjtp5ZAPBJW7xPPkCkydHO4ZActRQHjfZCPRmZC6RqawilFNS2nUf0GsjLHZA63sHr1AlLZClMUNk3KZAp5YwUnOmI3z7GeYJVbEO4PwZANvaCmSUZC4yb7aoRuM86ccJGjS9TXvby1DxZCvxssgAzZAp7qw6trSTdyt", "displayName"=>"Le Tran", "email"=>"tle_tran@yahoo.com", "cachedUserProfile"=>{"id"=>"10206973757603562", "name"=>"Le Tran", "last_name"=>"Tran", "first_name"=>"Le", "gender"=>"female", "birthday"=>"12/31/1990", "link"=>"https://www.facebook.com/app_scoped_user_id/10206973757603562/", "email"=>"tle_tran@yahoo.com", "picture"=>{"data"=>{"is_silhouette"=>"false", "url"=>"https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xtf1/v/t1.0-1/p100x100/11014814_10206064482432251_4623366158647941657_n.jpg?oh=daa9353ebd207ef79949d0a3d4a4fa8f&oe=56291499&__gda__=1444472335_10444f8cba7a1a275a6ee2f20e9165e7"}}, "age_range"=>{"min"=>"21"}, "locale"=>"en_US", "timezone"=>"-7"}, "profileImageURL"=>"https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xtf1/v/t1.0-1/p100x100/11014814_10206064482432251_4623366158647941657_n.jpg?oh=daa9353ebd207ef79949d0a3d4a4fa8f&oe=56291499&__gda__=1444472335_10444f8cba7a1a275a6ee2f20e9165e7"}, "provider"=>"facebook"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "tle_tran@yahoo.com"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 10ms (Views: 2.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/5" for ::1 at 2015-07-08 20:39:50 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 281ms (Views: 278.5ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/logout" for ::1 at 2015-07-08 20:39:54 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nNPXF1mZblsuMJVeGfs762rYKmnkPr9clMymNHu9xzbMY8vWYq9AzRMmnqKXHhWj5xfWdnrhmqogyLMBt1AIgA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-07-08 20:39:54 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 128ms (Views: 127.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2015-07-08 20:39:55 -0700
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 194ms (Views: 192.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-07-08 20:39:57 -0700
+Processing by SessionsController#new as HTML
+  Rendered shared/_flash_messages.html.erb (0.2ms)
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 113ms (Views: 111.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-07-08 20:40:32 -0700
+Processing by SessionsController#new as HTML
+  Rendered shared/_flash_messages.html.erb (0.2ms)
+  Rendered sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 242ms (Views: 241.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/import_sass_files.self-c171cee71efe96080b9b96abbfeb26dbb6758b4b9c7d465c57934fbcecb52a93.css?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/profile_layout.self-6754241fc6ab6595dd998995e3fd9036f25db632b2158f8ebc3d32bc9a81fe20.css?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/sessions.self-1aea19b292754d7ecd60c51b878762624916e7b410e0b3db009e48893f0db644.js?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/application.self-538d6440534fa5f615e8a26932792a82a2e4a33a97886e2d815eab8fc216d415.js?body=1" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started GET "/assets/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2?v=4.3.0" for ::1 at 2015-07-08 20:40:32 -0700
+
+
+Started POST "/login_via_social_media" for ::1 at 2015-07-08 20:40:36 -0700
+Processing by SessionsController#login_via_social_media as */*
+  Parameters: {"user"=>{"id"=>"10206973757603562", "accessToken"=>"CAAN1YfX79icBADpSAeUi9aZAN6svk2lFovIJ46TDQWeTgwsadEHL0XZBeR5NmqIOIzajgrOPc3eS2rVO69zZASpNgL2wUqxBsREz31bmcZCZBCiHcioNb7tGWTmx05HmRgDT43KtYI1QbZBRB0aqVZAH0RhXZAcxzILWy1OOzRwZCZAasCiSvAGatxlhCxIaD78E0etDjo3XVByeqIWGuIhZB1B", "displayName"=>"Le Tran", "email"=>"tle_tran@yahoo.com", "cachedUserProfile"=>{"id"=>"10206973757603562", "name"=>"Le Tran", "last_name"=>"Tran", "first_name"=>"Le", "gender"=>"female", "birthday"=>"12/31/1990", "link"=>"https://www.facebook.com/app_scoped_user_id/10206973757603562/", "email"=>"tle_tran@yahoo.com", "picture"=>{"data"=>{"is_silhouette"=>"false", "url"=>"https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xtf1/v/t1.0-1/p100x100/11014814_10206064482432251_4623366158647941657_n.jpg?oh=daa9353ebd207ef79949d0a3d4a4fa8f&oe=56291499&__gda__=1444472335_10444f8cba7a1a275a6ee2f20e9165e7"}}, "age_range"=>{"min"=>"21"}, "locale"=>"en_US", "timezone"=>"-7"}, "profileImageURL"=>"https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xtf1/v/t1.0-1/p100x100/11014814_10206064482432251_4623366158647941657_n.jpg?oh=daa9353ebd207ef79949d0a3d4a4fa8f&oe=56291499&__gda__=1444472335_10444f8cba7a1a275a6ee2f20e9165e7"}, "provider"=>"facebook"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "tle_tran@yahoo.com"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/5" for ::1 at 2015-07-08 20:40:36 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 127ms (Views: 125.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/5" for ::1 at 2015-07-08 20:40:44 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 194ms (Views: 191.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/5/edit" for ::1 at 2015-07-08 20:40:46 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered users/edit.html.erb within layouts/profile (4.9ms)
+  Rendered users/show.html.erb (0.6ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered layouts/application.html.erb (102.8ms)
+Completed 200 OK in 122ms (Views: 120.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/5" for ::1 at 2015-07-08 20:40:49 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 191ms (Views: 189.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/5/edit" for ::1 at 2015-07-08 20:40:51 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/edit.html.erb within layouts/profile (2.0ms)
+  Rendered users/show.html.erb (0.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered layouts/application.html.erb (103.1ms)
+Completed 200 OK in 110ms (Views: 108.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/5" for ::1 at 2015-07-08 20:41:08 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 177ms (Views: 155.5ms | ActiveRecord: 3.1ms)

@@ -27,7 +27,7 @@ var loginWithFacebook = function(){
 
       var request = $.ajax ({
         url: '/login_via_social_media',
-        type: 'get',
+        type: 'post',
         data: { user: user, provider: provider}
 
       })
@@ -38,6 +38,7 @@ var loginWithFacebook = function(){
 
 
     })
+    myFirebaseRef.unauth();
 
   })
 };
