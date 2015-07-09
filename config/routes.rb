@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
 
   resources :users do 
-    resources :posts
-      end
+    resources :posts 
+  end
 
   root 'home#index'
 
