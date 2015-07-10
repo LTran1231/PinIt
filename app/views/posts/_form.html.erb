@@ -21,7 +21,10 @@
   </div>
   <div class="field">
     <%= f.label :location %><br>
-    <%= f.text_field :location %>
+    <%= f.text_field :location, id: "f_elem_city" %>
+    <%= f.hidden_field :lat, id: "geobyteslatitude" %>
+    <%= f.hidden_field :log, id: "geobyteslongitude" %>
+
   </div>
   <div class="field">
     <%= f.label :travel_date %><br>
@@ -30,4 +33,31 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
+<form action="" method="post" name="form_citydetails" id="form_citydetails" enctype="multipart/form-data" onsubmit="return false;">
+<p><b>Please enter</b> your city here to see it work. 
+  <br/><input class="ff_elem" type="text" name="ff_nm_from[]" value="" id="f_elem_city"/><br/>
+  Country: <br/>
+  <input id="geobytescountry" readonly="readonly" size="30" value><br/>
+  Region: <br/>
+  <input id="geobytesregion" readonly="readonly" size="30" value><br/>
+  City: <br/>
+  <input id="geobytescity" readonly="readonly" size="30" value><br/>
+  latitude: <br/>
+  <input id="geobyteslatitude" readonly="readonly" size="30" value><br/>
+  longitude: <br/>
+  <input id="geobyteslongitude" readonly="readonly" size="30" value><br/>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
