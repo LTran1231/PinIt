@@ -24,22 +24,25 @@ var loginWithFacebook = function(){
 
       })
       var user = authData.facebook;
+      var provider = authData.provider;
+      var uid = authData.uid;
 
       var request = $.ajax ({
         url: '/login_via_social_media',
         type: 'post',
-        data: { user: user, provider: provider}
+        data: { user: user, provider: provider },
+        beforeSend: function(xhr) {
+          xhr.setRequestHeader('X-CSRF-Token', 
+          $('meta[name="csrf-token"]').attr('content'))
+        }
 
       })
       request.done(function(response){
-        // console.log(response);
-        window.location.href = "users/"+ response.id
+        window.location.href = "users/"+ response.id + "/posts"
       })
 
 
     })
-    myFirebaseRef.unauth();
-
   })
 };
 

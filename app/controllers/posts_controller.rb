@@ -3,6 +3,13 @@ class PostsController < ApplicationController
   before_filter :load_user
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
+  # GET /location_posts
+  def location_posts
+    @posts = Post.all
+    @posts = @user.posts.all
+    render json: @user
+  end
+
   # GET /posts
   # GET /posts.json
   def index
@@ -36,7 +43,7 @@ class PostsController < ApplicationController
         format.json { render :show, status: :created, location: [@post.user, @post] }
       else
         format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        format.json { render @post.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -50,7 +57,7 @@ class PostsController < ApplicationController
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        format.json { render @post.errors, status: :unprocessable_entity }
       end
     end
   end

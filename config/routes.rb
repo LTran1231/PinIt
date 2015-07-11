@@ -1,16 +1,19 @@
 Rails.application.routes.draw do
 
   get 'home/index'
+
   get 'signup' => 'users#new'
   get 'login'  => 'sessions#new'
   post 'login_via_social_media' => 'sessions#login_via_social_media'
-
   post 'login' => 'sessions#create'
-
   delete 'logout' => 'sessions#destroy'
 
+
+
+
   resources :users do 
-    resources :posts 
+    resources :posts
+    get 'location_posts' => 'posts#location_posts' 
   end
 
   root 'home#index'

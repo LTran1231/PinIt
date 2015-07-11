@@ -18,12 +18,18 @@ class User < ActiveRecord::Base
     email = "#{user[:email]}"
     firebase_uid = "#{user[:id]}"
     provider = "#{provider}"
-
     facebook_url = "#{user[:cachedUserProfile][:link]}"
     avatar = "#{user[:profileImageURL]}"
     existing_user = self.where(email: email).first
     if existing_user
-      existing_user
+      existing_user.update!(
+        name: name, 
+        uid: firebase_uid, 
+        provider: provider, 
+        facebook_url: facebook_url, 
+        avatar: avatar 
+        )
+      return existing_user
     else
       self.create!(
       	name: name, 

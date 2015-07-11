@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
     @user = User.create_from_provider(user, provider)
     session[:user_id] = @user.id
     render json: current_user
-   
   end
 
   def create
