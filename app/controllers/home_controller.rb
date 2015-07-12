@@ -7,9 +7,7 @@ class HomeController < ApplicationController
   end
 
   def posts_data
-    user = User.find(params[:id])
-    posts = user.posts
-    p posts
+    posts = Post.all
     render json: posts
   end
 end

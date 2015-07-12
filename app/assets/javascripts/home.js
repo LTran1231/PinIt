@@ -2,21 +2,13 @@
 var map = (function(){
   // Runs the calls to FB and sets markers
   var setMarkers = function(map, coordinates) {
-//    // get user posts data using AJAX
-   $.get('/user_data').done(function (user) {
-     console.log(user)
-     var usersRef = "https://pinasyougo.firebaseio.com/users/";
-     var provider = user.provider;
-     var uid = user.uid;
+//    // get posts data using AJAX
+   $.get('/posts_data').done(function (posts) {
+     console.log(posts)
+     // send posts data to firebase storage
+     var myFirebaseRef = new Firebase("https://pinasyougo.firebaseio.com/posts/");
 
-     var myFirebaseRef = new Firebase(usersRef+provider+"%3A"+uid+"/posts");
-
-      myFirebaseRef.push();
-//         var myFirebaseRef = new Firebase(url+"posts");
-// var newChildRef = myFirebaseRef.child("posts");
-// // we can get its id using key()
-// newChildRef.push()
-
+      myFirebaseRef.push(posts);
 
       // Save markers for deletion
       var markers = [];
