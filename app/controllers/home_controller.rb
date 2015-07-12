@@ -8,6 +8,14 @@ class HomeController < ApplicationController
 
   def posts_data
     posts = Post.all
-    render json: posts
+    coords = []
+    posts.each do |post|
+    	coords << [post.lat, post.log]
+    end
+
+    # coords = coords.flatten
+
+
+    render json: coords
   end
 end
