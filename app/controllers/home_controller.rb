@@ -12,10 +12,6 @@ class HomeController < ApplicationController
     posts.each do |post|
     	coords << [post.lat, post.log]
     end
-
-    # coords = coords.flatten
-
-
     render json: coords
   end
 end

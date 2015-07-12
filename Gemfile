@@ -13,7 +13,7 @@ gem 'font-awesome-rails'
 gem 'awesome_print'
 
 
-gem 'rsvp'
+
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
