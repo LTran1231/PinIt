@@ -1,5 +1,5 @@
 
-<%= form_for([@post.user, @post], class: "post-form", name: "form_citydetails", id: "form_citydetails", enctype: "multipart/form-data" ) do |f| %>
+<%= form_for([@post.user, @post]) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -20,19 +20,15 @@
     <%= f.label :content %><br>
     <%= f.text_area :content %>
   </div>
-  <div class="field">
+  <div class="details">
     <%= f.label :location %><br>
-    <%= f.text_field :location, id: "f_elem_city", class: "ff_elem" %>
-    <%= f.hidden_field :lat, id: "geobyteslatitude" %>
-    <%= f.hidden_field :log, id: "geobyteslongitude" %>
+    <%= f.text_field :location, id: "geocomplete" %>
+    <%= f.hidden_field :lat, "data-geo" => "lat", readonly: "readonly" %>
+    <%= f.hidden_field :log, "data-geo" => "lng", readonly: "readonly" %>
+    <br>Address: <br/>
+    <input data-geo="formatted_address", readonly: "readonly">
     <br>Country: <br/>
-    <input id="geobytescountry" readonly="readonly" size="30" value><br/>
-    Region: <br/>
-    <input id="geobytesregion" readonly="readonly" size="30" value><br/>
-    City: <br/>
-    <input id="geobytescity" readonly="readonly" size="30" value><br/>
-
-
+    <input data-geo="country_short", readonly: "readonly">
   </div>
   <div class="field">
     <%= f.label :travel_date %><br>

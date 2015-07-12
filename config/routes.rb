@@ -8,12 +8,15 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
+  get 'user_data' => 'home#user_data'
 
 
 
-  resources :users do 
+
+
+  resources :users do
     resources :posts
-    get 'location_posts' => 'posts#location_posts' 
+    get 'location_posts' => 'posts#location_posts'
   end
 
   root 'home#index'

@@ -3,8 +3,10 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string :title
       t.text :content
-      t.references :pin, index: true, foreign_key: true
       t.date :travel_date
+      t.string :location
+      t.float :lat
+      t.float :lng
       t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false
