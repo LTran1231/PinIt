@@ -11,10 +11,12 @@ var map = (function(){
 
      var myFirebaseRef = new Firebase(usersRef+provider+"%3A"+uid+"/posts");
 
-      myFirebaseRef.child(user.name).set({
-         lat: 37.7841336,
-         lng: -122.3957437
-      });
+      myFirebaseRef.push();
+//         var myFirebaseRef = new Firebase(url+"posts");
+// var newChildRef = myFirebaseRef.child("posts");
+// // we can get its id using key()
+// newChildRef.push()
+
 
       // Save markers for deletion
       var markers = [];

@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
   get 'user_data' => 'home#user_data'
 
+  get 'posts_data' => 'home#posts_data'
+
+
 
 
 
