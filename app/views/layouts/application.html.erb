@@ -7,6 +7,8 @@
 	<script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
 	<script src="https://cdn.firebase.com/libs/geofire/3.2.2/geofire.min.js"></script>
 
+	<script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
+	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<!-- AUTOCOMPLETE -->
 	 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
@@ -15,13 +17,11 @@
 	<link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/flick/jquery-ui.css" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.4/jquery.geocomplete.js"></script>
 	<!-- AUTOCOMPLETE -->
-	<script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
-	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
 
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+	<!-- <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' /> -->
 	<%= csrf_meta_tags %>
 
 </head>

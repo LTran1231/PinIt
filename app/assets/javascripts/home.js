@@ -1,5 +1,10 @@
 
 $(function(){
+  $("#geocomplete").geocomplete({
+    details: ".details",
+    detailsAttribute: "data-geo"
+  });
+
   var base = new Firebase("https://pinasyougo.firebaseio.com/posts/");
 
   $.get('/posts_data').done(function (posts) {
@@ -16,17 +21,17 @@ $(function(){
     console.log(firebaseCoords)
   });
 
-  L.mapbox.accessToken = 'pk.eyJ1IjoibHRyYW4xMjMxIiwiYSI6IjJhNThiNDcxZDczNWQwZTkwNjMxMThhNDE4ZGUyNTA2In0.obLVCvFCcLLDKdV0liwQRQ';
-  map = L.mapbox.map('map', 'ltran1231.mmfe4jdj').setView([16.805, -172.969], 2);
+  L.mapbox.accessToken = "pk.eyJ1IjoibHRyYW4xMjMxIiwiYSI6IjJhNThiNDcxZDczNWQwZTkwNjMxMThhNDE4ZGUyNTA2In0.obLVCvFCcLLDKdV0liwQRQ";
+  map = L.mapbox.map('map', "ltran1231.mmfe4jdj").setView([45.706, 11.953], 2);
 
   base.on('child_added', function(snapshot){
     // var features = []
     for (var k in snapshot.val()) {
       // generate random color for the marker
       color = '#' + [
-        (~~(Math.random() * 16)).toString(16),
-        (~~(Math.random() * 16)).toString(16),
-        (~~(Math.random() * 16)).toString(16)].join('');
+      (~~(Math.random() * 16)).toString(16),
+      (~~(Math.random() * 16)).toString(16),
+      (~~(Math.random() * 16)).toString(16)].join('');
       var postID = snapshot.val()  
       console.log(postID)
       var post = snapshot.val()  
