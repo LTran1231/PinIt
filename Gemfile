@@ -16,7 +16,7 @@ gem 'font-awesome-rails'
 gem 'awesome_print'
 
 
-
+gem 'jquery-turbolinks'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
