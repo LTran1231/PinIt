@@ -1,7 +1,6 @@
 
-$(function() {
-  loginWithFacebook();
-});
+// $(function() {
+// });
 
 var myFirebaseRef = new Firebase("https://pinasyougo.firebaseio.com/");
 
