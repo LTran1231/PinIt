@@ -16,6 +16,8 @@ gem 'font-awesome-rails'
 gem 'awesome_print'
 
 
+
+
 gem 'jquery-turbolinks'
 
 # Use Uglifier as compressor for JavaScript assets
@@ -42,6 +44,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
