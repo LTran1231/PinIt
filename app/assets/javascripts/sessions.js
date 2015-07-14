@@ -12,7 +12,6 @@ var loginWithFacebook = function(){
     // var socialLoginPromise = auth(provider); 
    
     myFirebaseRef.authWithOAuthPopup(provider, function(error, authData) {
-    
       if (error) 
         console.log("Login Failed!", error);
       else 
@@ -44,45 +43,6 @@ var loginWithFacebook = function(){
     })
   })
 };
-
-var makeSomeAjAXCall = function(){
-  return $.ajax({
-    url: "action",
-    method: "GET"
-  });
-}
-var doSomeAJAX = function () {
-  var promist = makeSomeAjAXCall();
-  promise.done(function(){
-
-  });
-  return promise;
-};
-var whateve = function  () {
-  var promise = doSomeAJAX();
-  promise.fail(function(){})
-  return promise
-}
-
-var promise = whateve();
-
-
-var giveMe42 = function () {
-  console.log("giveMe42 was called")
-  return new Promise(function(resolve, reject){
-  setTimeout(function(){
-    resolve(42)
-  }, 1000)
-});
-
-} 
-giveMe42().then(function(answer){
-  console.log("promise then callback was called ")
-})
-.catch(function(error){
-  console.log('promise failed', error);
-})
-
 
 
 
