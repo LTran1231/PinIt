@@ -1,16 +1,14 @@
 
-<aside class="one-fourth-left">
-  <div class="col-xs-6 col-md-3">
     <div class="thumbnail">
-      <img src="<%= @user.avatar %>" alt="...">
+    	<%= image_tag "#{@user.avatar}", size: "200x150" %>
       <div class="caption">
-        <h3><%= @user.name %></h3>
+        <h3 id="<%= @user.name %>"><%= @user.name %></h3>
         <p><%= mail_to @user.email %></p>
         <p>Member since <%= Date.parse(@user.created_at.to_s) %></p>
 
         <div class="social-media">
 					<li> 
-						<a href="https://facebook.com/<%= @user.facebook_url %>">
+						<a href="https://facebook.com/<%= @user.uid %>">
 							<span class="fa-stack fa-lg">
 							  <i class="fa fa-circle fa-stack-2x"></i>
 							  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -46,6 +44,4 @@
 
       </div>
     </div>
-  </div>
-</aside>
 

@@ -1,5 +1,5 @@
 .env
-tmp
+tmp/cache/
 *.rbc
 capybara-*.html
 .rspec
@@ -31,3 +31,4 @@ bower.json
 
 # Ignore pow environment settings
 .powenv
+/config/secrets.yml

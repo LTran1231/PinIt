@@ -1,5 +1,10 @@
 <% content_for :profile do %>
-	<%= render template: "users/show" %>
+	<aside class="one-fourth-left">
+		<div class="col-xs-6 col-md-3">
+			<%= render template: "users/show" %>
+			<%= link_to "Add a new trip", new_user_post_path(current_user) %>
+		</div>  
+	</aside>
 
 	<article class="profile-three-fourth-right">
 		<%= content_for?(:users_content) ? yield(:users_content) : yield %>

@@ -1,16 +1,26 @@
 Rails.application.routes.draw do
 
   get 'home/index'
+
   get 'signup' => 'users#new'
   get 'login'  => 'sessions#new'
+  post 'login_via_social_media' => 'sessions#login_via_social_media'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  get 'user_data' => 'home#user_data'
 
-  # You can have the root of your site routed with "root"
-  resources :users
+  get 'posts_data' => 'home#posts_data'
+
+
+
+
+
+
+  resources :users do
+    resources :posts
+    get 'location_posts' => 'posts#location_posts'
+  end
 
   root 'home#index'
 

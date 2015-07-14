@@ -1,0 +1,1 @@
+json.extract! @user, :id, :name, :email, :password_digest, :created_at, :updated_at, :facebook_url, :google_url, :instagram, :twitter, :avatar, :provider, :uid
