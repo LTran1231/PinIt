@@ -10,7 +10,7 @@ class HomeController < ApplicationController
     posts = Post.all
     coords = []
     posts.each do |post|
-    	coords << [post.lat, post.log]
+    	coords << [post.lat, post.lng]
     end
     render json: coords
   end
