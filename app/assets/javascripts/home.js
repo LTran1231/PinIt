@@ -1,8 +1,8 @@
 
 $(function(){
-  loginWithFacebook();
-  // target = ("#dialog-login");
-  // sessions.login(target);
+  // loginWithFacebook();
+  target = ("#dialog-login");
+  sessions.login(target);
   autocompletePostForm();
 
   base = new Firebase("https://pinasyougo.firebaseio.com/posts/");
