@@ -1,11 +1,10 @@
 
 $(function(){
   // loginWithFacebook();
-  target = ("#dialog-login");
-  sessions.login(target);
+  firebase = "https://pinasyougo.firebaseio.com/";
+  sessions.login(".dialog-login");
   autocompletePostForm();
 
-  base = new Firebase("https://pinasyougo.firebaseio.com/posts/");
   sendPostsCoordsToFB();
   
   L.mapbox.accessToken = "pk.eyJ1IjoibHRyYW4xMjMxIiwiYSI6IjJhNThiNDcxZDczNWQwZTkwNjMxMThhNDE4ZGUyNTA2In0.obLVCvFCcLLDKdV0liwQRQ";
@@ -35,26 +34,28 @@ var sendPostsCoordsToFB = function () {
 
 
 var setMarkers = function() {
-    base.on('child_added', function(snapshot){
-      // var features = []
-      for (var k in snapshot.val()) {
-        // generate random color for the marker
-        color = '#' + [
-        (~~(Math.random() * 16)).toString(16),
-        (~~(Math.random() * 16)).toString(16),
-        (~~(Math.random() * 16)).toString(16)].join('');
-        var postID = snapshot.val()  
-        console.log(postID)
-        var post = snapshot.val()  
-        console.log(post)
-        var postion = snapshot.val()[k];
-        var marker = L.marker(postion, {
-          draggale: true,
-          icon: L.mapbox.marker.icon({
-            'marker-color': color
-          })
-        }).addTo(map)
-      }
+  firebaseRef = new Firebase(firebase + "posts/");
 
-    });
-  }
+  firebaseRef.on('child_added', function(snapshot){
+    // var features = []
+    for (var k in snapshot.val()) {
+      // generate random color for the marker
+      color = '#' + [
+      (~~(Math.random() * 16)).toString(16),
+      (~~(Math.random() * 16)).toString(16),
+      (~~(Math.random() * 16)).toString(16)].join('');
+      var postID = snapshot.val()  
+      console.log(postID)
+      var post = snapshot.val()  
+      console.log(post)
+      var postion = snapshot.val()[k];
+      var marker = L.marker(postion, {
+        draggale: true,
+        icon: L.mapbox.marker.icon({
+          'marker-color': color
+        })
+      }).addTo(map)
+    }
+
+  });
+}

@@ -1,21 +1,28 @@
-<div id="dialog-login", title="Login user">
-<h1>Log in</h1>
-<%= form_for :session, url: login_path do |f| %>
-	<%= render 'shared/flash_messages' %>
-	<%= f.label :email %>
-	<%= f.email_field :email %>
-	<%= f.label :password %>
-	<%= f.password_field :password %>
-	<%= f.submit "Login" %>
-<% end %>
+<div class="dialog-login", title="Login user">
+	<%= form_for :session, url: login_path do |f| %>
+		<%= render 'shared/flash_messages' %>
+		Email
+		<%= f.email_field :email, class: "form-control" %><br/>
+		Password
+		<%= f.password_field :password, class: "form-control" %><br/>
+		<%= f.submit "Login", class: "btn" %>
+	<% end %>
+	<hr>
+	<div>
+		<div>
+			<a href="/login_via_social_media" method="post" class="btn btn-block btn-social btn-facebook" title="facebook">
+				<i class="fa fa-facebook"></i>
+				Sign in with Facebook
+			</a>
+		</div>
+		<div>
+			<a href="/login_via_social_media" method="post" class="btn btn-block btn-social btn-google+" title="google">
+				<i class="fa fa-google"></i>
+				Sign in with Google
+			</a>
+		</div>
+	</div>
 
-<i class="fa fa-facebook">
-<a href="/login_via_social_media" method="post" class="btn btn-block btn-social btn-facebook" title="facebook">
-  
-  Sign in with Facebook
-</a></i>
-
-
-New user? <%= link_to "Signup now", new_user_path %>
+	New user? <%= link_to "Signup now", new_user_path %>
 </div>
 
