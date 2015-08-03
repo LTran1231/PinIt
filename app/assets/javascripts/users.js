@@ -8,24 +8,23 @@ var sessions = (function () {
     window.location.href = route;
   }
 
-  var providerLogin = function(provider) {
-    var deferred = $.Deferred();
-    firebaseRef.authWithOAuthPopup(provider, function(err, user){
-      if (err)
-        console.log( "login failed" + err);
-        deferred.reject(err);
-      if (user) 
-        console.log(user)
-        deferred.resolved(user);
-      console.log("login" + user);
-    })
-    return deferred.promise();
-  };
+  var authHandler = function(error, authData) {
+    if (error) {
+      console.log("Login Failed", error);
+    } else {
+      console.log("Login success", authData);
+    }
+  }
+
+
   // when login success route user to their show page 
   // otherwise return error
-  var handleAuthData = function(promise, route) {
-    $.when(promise)
-    .then(function(authData){
+  var handleAuthData = (function(promise) {
+    console.log(promise);
+    $.post("/login_via_social_media", { user: promise.facebook, provider: promise.provider })
+    .done(function(response){
+      console.log(response)
+      route = location.origin;
       routeTo(route);
     }, function (err) {
       console.log(err);
@@ -35,7 +34,7 @@ var sessions = (function () {
         className: 'alert-danger'
       });
     })
-  };
+  });
 
   // append errors 
   var showAlert = function(opts) {
@@ -56,8 +55,9 @@ var sessions = (function () {
 
       var $currentButton = $(event.target);
       var provider = $currentButton.attr('title');
-      providerLogin(provider);
-      // console.log(socialLoginPromise)
+      // socialLoginPromise = firebaseRef.authWithOAuthPopup(provider, authHandler);
+      // console.log(providerLogin);
+      // console.log(socialLoginPromise);
           // $.post('/login_via_social_media' )
       firebaseRef.onAuth(function(authData){
         if (authData)
@@ -66,7 +66,7 @@ var sessions = (function () {
             provider: authData.provider,
             name: authData.facebook.displayName
         })
-      handleAuthData(providerLogin(provider), location.origin);
+      handleAuthData(authData);
       })
     })
   });
