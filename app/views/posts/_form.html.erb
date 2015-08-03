@@ -24,7 +24,7 @@
     <%= f.label :location %><br>
     <%= f.text_field :location, id: "geocomplete", class: "form-control" %>
     <%= f.hidden_field :lat, "data-geo" => "lat", readonly: "readonly" %>
-    <%= f.hidden_field :log, "data-geo" => "lng", readonly: "readonly" %>
+    <%= f.hidden_field :lng, "data-geo" => "lng", readonly: "readonly" %>
     <br>Address: <br/>
     <input data-geo="formatted_address", class="form-control", readonly="readonly">
     <br>Country: <br/>
