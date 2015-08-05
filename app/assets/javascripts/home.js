@@ -11,7 +11,28 @@ $(function(){
   map = L.mapbox.map(document.getElementById("map"), "ltran1231.mmfe4jdj").setView([45.706, 11.953], 2);
 
   setMarkers();
-  
+
+  $(document).on('click', '.signin-link', function(event){
+    event.preventDefault();
+
+    $(".signin-signup li").removeClass('active');
+    $(this).closest('li').addClass('active');
+    debugger
+    $(".dialog-wrapper").append($("#dialog-register"));
+    // $('.signin-popover').show();
+
+  });
+
+  $(document).on('click', ".signup-link", function(event){
+    event.preventDefault();
+    $(".signin-signup li").removeClass('active');
+    $(this).closest('li').addClass('active');
+    // $(".signup-popover").show();
+    // $(".signin-popover").hide();
+
+    $('.dialog-wrapper').append($("#dialog-register"));
+
+  });
 });
 
 

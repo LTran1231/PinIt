@@ -49,7 +49,7 @@ var sessions = (function () {
   // dealing with login, logout, register
   var login = (function(target) {
 
-    $(target).on('click', 'a.btn-social', function(event) {
+    $(target).on('click', 'i.social', function(event) {
       event.preventDefault();
 
       var $currentButton = $(event.target);
