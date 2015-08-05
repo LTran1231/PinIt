@@ -11,10 +11,6 @@
 	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
 
-	<!-- NICEDIT -->
-	<!-- // <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script> -->
-
-	<!-- NICEDIT -->
 
 	<!-- AUTOCOMPLETE -->
 	 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
@@ -27,7 +23,6 @@
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-	<!-- <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' /> -->
 	<%= csrf_meta_tags %>
 
 </head>
@@ -49,15 +44,58 @@
 		    </ul>
 		  </li>
 		  <% else %>
-		  <li><%= link_to "Log in", login_path, id: "opener-login" %></li>
-			<li><%= link_to 'Signup', new_user_path, id: "opener-register" %></li>
+		  <li><%= link_to "Sign In", "#", data: { toggle: "modal", target: "#loginModal" } %></li>
+		  
 		  <% end %>
 		</ul>
 	</nav>
 <body>
 	<div class="container">
+
+		<div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<nav class="signin-signup">
+						<ul class="nav nav-tabs nav-justified">
+							<li role="presentation" class="navbar active"><a href="#signin" class="signin-link">Sign In</a></li>
+							<li role="presentation" ><a href="#signup" class="signup-link">Sign Up</a></li>
+						</ul>
+					</nav>
+					<div class="modal-body signin-popover">
+						<div class="dialog-login", title="Login user">
+							<div class="row">
+								<div class="col-md-6 text-center">
+									<a href="#facebook">
+										<i class="social fa fa-facebook-square fa-4x" title="facebook"></i>
+									</a>
+								</div>
+								<div class="col-md-6 text-center">
+									<a href="#google">
+										<i class="social fa fa-google-plus-square fa-4x" title="google"></i>
+									</a>
+								</div>
+							</div>
+							<div class="display-flex">
+								<hr width="45%" align="left"><p class="or-separtor">or</p><hr width="45%" align="right">
+							</div>
+
+							<div class="dialog-wrapper">
+								<%= render template: "sessions/new" %>
+								<%= render template: "users/new" %>
+							</div>
+						</div>
+
+					</div>
+<!-- 					<div class="modal-body signup-popover" style="display: none">
+
+					</div> -->
+				</div>
+			</div>
+		</div>
 		<%= content_for?(:profile) ? yield(:profile) : yield %>
   </div>
+
 </body>
 </html>
+
 

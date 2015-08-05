@@ -1,21 +1,13 @@
-<div id="dialog-login", title="Login user">
-<h1>Log in</h1>
-<%= form_for :session, url: login_path do |f| %>
-	<%= render 'shared/flash_messages' %>
-	<%= f.label :email %>
-	<%= f.email_field :email %>
-	<%= f.label :password %>
-	<%= f.password_field :password %>
-	<%= f.submit "Login" %>
-<% end %>
 
-<i class="fa fa-facebook">
-<a href="/login_via_social_media" method="post" class="btn btn-block btn-social btn-facebook" title="facebook">
-  
-  Sign in with Facebook
-</a></i>
+	<div class="signin-wrapper">
+		<%= form_for :session, url: login_path do |f| %>
+			<%= render 'shared/flash_messages' %>
 
+			<%= f.email_field :email, class: "form-control", placeholder: "Email" %><br/>
 
-New user? <%= link_to "Signup now", new_user_path %>
-</div>
+			<%= f.password_field :password, class: "form-control", placeholder: "Password" %><br/>
+			<%= f.submit "Sign In", class: "btn btn-primary btn-block" %>
+		<% end %>
+	</div>
+
 
