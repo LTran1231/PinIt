@@ -44,8 +44,8 @@
 		    </ul>
 		  </li>
 		  <% else %>
-		  <li><%= link_to "Log in", "#", data: { toggle: "modal", target: "#loginModal" } %></li>
-			<li><%= link_to 'Signup', new_user_path, id: "opener-register" %></li>
+		  <li><%= link_to "Sign In", "#", data: { toggle: "modal", target: "#loginModal" } %></li>
+		  
 		  <% end %>
 		</ul>
 	</nav>
@@ -57,7 +57,7 @@
 				<div class="modal-content">
 					<nav class="signin-signup">
 						<ul class="nav nav-tabs nav-justified">
-							<li role="presentation" class="active"><a href="#signin" class="signin-link">Sign In</a></li>
+							<li role="presentation" class="navbar active"><a href="#signin" class="signin-link">Sign In</a></li>
 							<li role="presentation" ><a href="#signup" class="signup-link">Sign Up</a></li>
 						</ul>
 					</nav>
@@ -80,7 +80,8 @@
 							</div>
 
 							<div class="dialog-wrapper">
-								<!-- APPEND SIGN-IN OR SIGN-UP FORM -->
+								<%= render template: "sessions/new" %>
+								<%= render template: "users/new" %>
 							</div>
 						</div>
 

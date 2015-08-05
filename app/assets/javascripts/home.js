@@ -17,9 +17,9 @@ $(function(){
 
     $(".signin-signup li").removeClass('active');
     $(this).closest('li').addClass('active');
-    debugger
-    $(".dialog-wrapper").append($("#dialog-register"));
-    // $('.signin-popover').show();
+
+    $('#dialog-register').hide();
+    $('.signin-wrapper').show();
 
   });
 
@@ -30,7 +30,8 @@ $(function(){
     // $(".signup-popover").show();
     // $(".signin-popover").hide();
 
-    $('.dialog-wrapper').append($("#dialog-register"));
+    $("#dialog-register").show();
+    $(".signin-wrapper").hide();
 
   });
 });
