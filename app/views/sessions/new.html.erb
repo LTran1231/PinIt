@@ -1,4 +1,29 @@
 <div class="dialog-login", title="Login user">
+
+	<div class="row pad-10px">
+		<div class="col-md-6 col-md-offset-3">
+			<a href="/login_via_social_media" method="post" class="btn btn-block btn-social btn-facebook" title="facebook">
+				<i class="fa fa-facebook"></i>
+				Sign in with Facebook
+			</a>
+		</div>
+	</div>
+
+	<div class="row pad-10px">
+		<div class="col-md-6 col-md-offset-3">
+			<a href="/login_via_social_media" method="post" class="btn btn-block btn-social btn-google-plus" title="google">
+				<i class="fa fa-google-plus"></i>
+				Sign in with Google+
+			</a>
+		</div>
+	</div>
+
+
+	
+	<div class="display-flex">
+		<hr width="45%" align="left"><p class="or-separtor">or</p><hr width="45%" align="right">
+	</div>
+
 	<%= form_for :session, url: login_path do |f| %>
 		<%= render 'shared/flash_messages' %>
 		Email
@@ -7,21 +32,6 @@
 		<%= f.password_field :password, class: "form-control" %><br/>
 		<%= f.submit "Login", class: "btn" %>
 	<% end %>
-	<hr>
-	<div>
-		<div>
-			<a href="/login_via_social_media" method="post" class="btn btn-block btn-social btn-facebook" title="facebook">
-				<i class="fa fa-facebook"></i>
-				Sign in with Facebook
-			</a>
-		</div>
-		<div>
-			<a href="/login_via_social_media" method="post" class="btn btn-block btn-social btn-google+" title="google">
-				<i class="fa fa-google"></i>
-				Sign in with Google
-			</a>
-		</div>
-	</div>
 
 	New user? <%= link_to "Signup now", new_user_path %>
 </div>
