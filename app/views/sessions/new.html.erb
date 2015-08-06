@@ -1,13 +1,13 @@
 
-	<div class="signin-wrapper">
-		<%= form_for :session, url: login_path do |f| %>
-			<%= render 'shared/flash_messages' %>
+<div class="signin-wrapper">
+	<%= form_for :session, url: login_path do |f| %>
+		<%= render 'shared/flash_messages' %>
 
-			<%= f.email_field :email, class: "form-control", placeholder: "Email" %><br/>
+		<%= f.email_field :email, class: "form-control", placeholder: "Email" %><br/>
 
-			<%= f.password_field :password, class: "form-control", placeholder: "Password" %><br/>
-			<%= f.submit "Sign In", class: "btn btn-primary btn-block" %>
-		<% end %>
-	</div>
+		<%= f.password_field :password, class: "form-control", placeholder: "Password" %><br/>
+		<%= f.submit "Sign In", class: "btn btn-primary btn-block" %>
+	<% end %>
+</div>
 
 
