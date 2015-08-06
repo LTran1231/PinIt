@@ -20,7 +20,6 @@ $(function(){
 
     $('#dialog-register').hide();
     $('.signin-wrapper').show();
-
   });
 
   $(document).on('click', ".signup-link", function(event){
@@ -32,8 +31,11 @@ $(function(){
 
     $("#dialog-register").show();
     $(".signin-wrapper").hide();
-
   });
+
+  $('.carousel').carousel({
+      interval: 5000 //changes the speed
+  })
 });
 
 
