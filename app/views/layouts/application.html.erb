@@ -28,7 +28,7 @@
 </head>
 <body>
 	<!-- NAVIGATION -->
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<nav class="navbar navbar-color navbar-fixed-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-navbar">
@@ -59,45 +59,45 @@
 				</ul>
 			</div>
 		</div>
+	</nav>
 
-		<!-- POPUP MODAL -->
-		<div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<nav class="signin-signup">
-						<ul class="nav nav-tabs nav-justified">
-							<li role="presentation" class="navbar active"><a href="#signin" class="signin-link">Sign In</a></li>
-							<li role="presentation" ><a href="#signup" class="signup-link">Sign Up</a></li>
-						</ul>
-					</nav>
-					<div class="modal-body signin-popover">
-						<div class="dialog-login", title="Login user">
-							<div class="row">
-								<div class="col-md-6 text-center">
-									<a href="#facebook">
-										<i class="social fa fa-facebook-square fa-4x" title="facebook"></i>
-									</a>
-								</div>
-								<div class="col-md-6 text-center">
-									<a href="#google">
-										<i class="social fa fa-google-plus-square fa-4x" title="google"></i>
-									</a>
-								</div>
+	<!-- POPUP MODAL -->
+	<div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<nav class="signin-signup">
+					<ul class="nav nav-tabs nav-justified">
+						<li role="presentation" class="navbar active"><a href="#signin" class="signin-link">Sign In</a></li>
+						<li role="presentation" ><a href="#signup" class="signup-link">Sign Up</a></li>
+					</ul>
+				</nav>
+				<div class="modal-body signin-popover">
+					<div class="dialog-login", title="Login user">
+						<div class="row">
+							<div class="col-md-6 text-center">
+								<a href="#facebook">
+									<i class="social fa fa-facebook-square fa-4x" title="facebook"></i>
+								</a>
 							</div>
-							<div class="display-flex">
-								<hr width="45%" align="left"><p class="or-separtor">or</p><hr width="45%" align="right">
+							<div class="col-md-6 text-center">
+								<a href="#google">
+									<i class="social fa fa-google-plus-square fa-4x" title="google"></i>
+								</a>
 							</div>
+						</div>
+						<div class="display-flex">
+							<hr width="45%" align="left"><p class="or-separtor">or</p><hr width="45%" align="right">
+						</div>
 
-							<div class="dialog-wrapper">
-								<%= render template: "sessions/new" %>
-								<%= render template: "users/new" %>
-							</div>
-						</div>	
-					</div>
+						<div class="dialog-wrapper">
+							<%= render template: "sessions/new" %>
+							<%= render template: "users/new" %>
+						</div>
+					</div>	
 				</div>
 			</div>
 		</div>
-	</nav>
+	</div>
 
 
 

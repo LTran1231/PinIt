@@ -2,23 +2,18 @@
 <header id="homepageCarousel" class="carousel slide">
 	<ol class="carousel-indicators">
 		<li data-target="#homepageCarousel" data-slide-to="0" class="active"></li>
-		<li data-target="#homepageCarousel" data-slide-to="1" class="active"></li>
-		<li data-target="#homepageCarousel" data-slide-to="2" class="active"></li>
+		<li data-target="#homepageCarousel" data-slide-to="1" class=""></li>
+		<li data-target="#homepageCarousel" data-slide-to="2" class=""></li>
 	</ol>
 	<div class="carousel-inner">
 		<div class="item active">
 			<div class="fill" id="map"></div>
-<!-- 			<div class="carousel-caption">
-				<h2>Map</h2>
-			</div> -->
 		</div>
 		<div class="item">
-	    <!-- Set the second background image using inline CSS below. -->
-	    <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+	    <div><%= image_tag 'cuba-vinales-hike.JPG', class: "fill" %></div>
 		</div>
 		<div class="item">
-	    <!-- Set the third background image using inline CSS below. -->
-	    <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+	    <%= image_tag 'cuba-vinales-beach.JPG', class: "fill" %>
 		</div>
 	</div>
 
