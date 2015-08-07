@@ -8,7 +8,14 @@ $(function(){
   sendPostsCoordsToFB();
   
   L.mapbox.accessToken = "pk.eyJ1IjoibHRyYW4xMjMxIiwiYSI6IjJhNThiNDcxZDczNWQwZTkwNjMxMThhNDE4ZGUyNTA2In0.obLVCvFCcLLDKdV0liwQRQ";
-  map = L.mapbox.map(document.getElementById("map"), "ltran1231.mmfe4jdj").setView([45.706, 11.953], 2);
+  map = L.mapbox.map(document.getElementById("map"), "ltran1231.mmfe4jdj", {
+    zoomControl: false
+  }).setView([45.706, 11.953], 2);
+  
+  map.dragging.disable();
+  map.touchZoom.disable();
+  map.doubleClickZoom.disable();
+  map.scrollWheelZoom.disable();
 
   setMarkers();
 
@@ -74,7 +81,7 @@ var setMarkers = function() {
       console.log(post)
       var postion = snapshot.val()[k];
       var marker = L.marker(postion, {
-        draggale: true,
+        draggable: true,
         icon: L.mapbox.marker.icon({
           'marker-color': color
         })
