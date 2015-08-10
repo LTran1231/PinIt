@@ -11,24 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709043145) do
+ActiveRecord::Schema.define(version: 20150810225540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "pins", force: :cascade do |t|
-    t.string   "location"
+  create_table "locations", force: :cascade do |t|
+    t.float    "lat"
+    t.float    "lng"
+    t.string   "city"
+    t.string   "country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "pins", force: :cascade do |t|
+    t.integer  "post_id"
+    t.integer  "location_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "pins", ["location_id"], name: "index_pins_on_location_id", using: :btree
+  add_index "pins", ["post_id"], name: "index_pins_on_post_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
     t.date     "travel_date"
-    t.string   "location"
-    t.float    "lat"
-    t.float    "lng"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -51,5 +61,7 @@ ActiveRecord::Schema.define(version: 20150709043145) do
     t.string   "uid"
   end
 
+  add_foreign_key "pins", "locations"
+  add_foreign_key "pins", "posts"
   add_foreign_key "posts", "users"
 end
