@@ -2,8 +2,8 @@
 
 one:
   post_id: 
-  location: MyString
+  location_id: 
 
 two:
   post_id: 
-  location: MyString
+  location_id: 

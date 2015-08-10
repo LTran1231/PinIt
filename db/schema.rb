@@ -11,16 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150710020429) do
+ActiveRecord::Schema.define(version: 20150810225540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "pins", force: :cascade do |t|
-    t.string   "location"
+  create_table "locations", force: :cascade do |t|
+    t.float    "lat"
+    t.float    "lng"
+    t.string   "city"
+    t.string   "country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "pins", force: :cascade do |t|
+    t.integer  "post_id"
+    t.integer  "location_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "pins", ["location_id"], name: "index_pins_on_location_id", using: :btree
+  add_index "pins", ["post_id"], name: "index_pins_on_post_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -29,70 +42,9 @@ ActiveRecord::Schema.define(version: 20150710020429) do
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "location"
-    t.float    "lat"
-    t.float    "log"
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
-
-  create_table "rsvp_access_attempts", force: :cascade do |t|
-    t.string   "remote_ip"
-    t.integer  "failed_attempts", default: 0
-    t.datetime "locked_until"
-    t.integer  "locks_incurred",  default: 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "rsvp_families", force: :cascade do |t|
-    t.string   "salutation_type", limit: 50
-    t.string   "salutation"
-    t.string   "street_1",        limit: 75
-    t.string   "street_2",        limit: 75
-    t.string   "city",            limit: 50
-    t.string   "state",           limit: 25
-    t.string   "postal_code",     limit: 15
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "rsvp_invitations", force: :cascade do |t|
-    t.integer  "family_id"
-    t.string   "salutation_type", limit: 50
-    t.string   "salutation"
-    t.string   "rsvp_code",       limit: 20
-    t.integer  "total_invited"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "rsvp_invitations", ["rsvp_code"], name: "index_rsvp_invitations_on_rsvp_code", unique: true, using: :btree
-
-  create_table "rsvp_members", force: :cascade do |t|
-    t.integer  "family_id"
-    t.integer  "person_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "rsvp_people", force: :cascade do |t|
-    t.string   "gender_type", limit: 50
-    t.string   "first_name",  limit: 50
-    t.string   "last_name",   limit: 50
-    t.string   "suffix",      limit: 15
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "rsvp_responses", force: :cascade do |t|
-    t.integer  "invitation_id"
-    t.string   "email",           limit: 50
-    t.integer  "total_attending"
-    t.text     "comment"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -109,5 +61,7 @@ ActiveRecord::Schema.define(version: 20150710020429) do
     t.string   "uid"
   end
 
+  add_foreign_key "pins", "locations"
+  add_foreign_key "pins", "posts"
   add_foreign_key "posts", "users"
 end

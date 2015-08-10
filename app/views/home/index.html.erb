@@ -1,8 +1,20 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<!-- <div class='col s8' id="map-canvas" style='height: 500px; width: 100%;'></div> -->
+	<!-- CAROUSEL -->
+<header id="homepageCarousel" class="carousel slide">
+	<ol class="carousel-indicators">
+		<li data-target="#homepageCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#homepageCarousel" data-slide-to="1" class=""></li>
+		<li data-target="#homepageCarousel" data-slide-to="2" class=""></li>
+	</ol>
+	<div class="carousel-inner">
+		<div class="item active">
+			<div class="fill" id="map"></div>
+		</div>
+		<div class="item">
+	    <div><%= image_tag 'cuba-vinales-hike.JPG', class: "fill" %></div>
+		</div>
+		<div class="item">
+	    <%= image_tag 'cuba-vinales-beach.JPG', class: "fill" %>
+		</div>
+	</div>
 
-<!-- <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/ltran1231.mmfe4jdj/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoibHRyYW4xMjMxIiwiYSI6IjJhNThiNDcxZDczNWQwZTkwNjMxMThhNDE4ZGUyNTA2In0.obLVCvFCcLLDKdV0liwQRQ'></iframe> -->
-
-<div id='map'></div>
-
+</header>
