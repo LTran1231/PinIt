@@ -41,7 +41,7 @@ $(function(){
   });
 
   $('.carousel').carousel({
-      interval: 5000 //changes the speed
+      interval: 10000 //changes the speed
   })
 });
 
