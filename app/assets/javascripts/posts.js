@@ -1,6 +1,6 @@
 var autocompletePostForm = function(){
   $("#geocomplete").geocomplete({
-    details: ".details",
+    details: ".location-detail",
     detailsAttribute: "data-geo"
   });
 }
