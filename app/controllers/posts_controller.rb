@@ -25,6 +25,7 @@ class PostsController < ApplicationController
   # GET users/1/posts/new
   def new
     @post = @user.posts.new
+    @location = @post.locations.new
   end
 
   # GET /posts/1/edit
@@ -83,6 +84,12 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :location, :lat, :lng, :travel_date, :user_id)
+      params.require(:post).permit( 
+        :title, 
+        :content, 
+        :travel_date, 
+        :user_id, 
+        locations_attributes: [ :lat, :lng, :city, :country, :_destroy ] 
+        )
     end
 end
