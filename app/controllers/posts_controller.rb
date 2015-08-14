@@ -38,7 +38,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     if params[:location]
-      location = Location.where(lat: params[:location][:lat], lng: params[:location][:lng]).first_or_initialize
+      location = Location.where(lat: params[:location][:lat], lng: params[:location][:lng], address: params[:location][:address]).first_or_initialize
       location.save
     end
     @post = @user.posts.new(post_params)

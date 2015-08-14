@@ -9,7 +9,12 @@ var autocompletePostForm = function(){
 		$('.location-logger').html($(".location-logger").html() + "<br> * " + result.formatted_address + "  <a href='#' class='delete_location'>Delete</a>");
 		var url = location.pathname.replace("new", "")
 
-		$.post(url, { location: { lat: result.geometry.location.lat(), lng: result.geometry.location.lng() }})
+		$.post(url, { location: 
+			{ lat: result.geometry.location.lat(), 
+				lng: result.geometry.location.lng(),
+				address: result.formatted_address  
+			}
+		})
 	})
 };
 
