@@ -3,6 +3,7 @@ $(function(){
   // loginWithFacebook();
   firebase = "https://pinasyougo.firebaseio.com/";
   sessions.login(".dialog-login");
+  
   autocompletePostForm();
 
   sendPostsCoordsToFB();

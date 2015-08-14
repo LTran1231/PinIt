@@ -1,0 +1,8 @@
+<div class="location-detail">
+  <%= text_field_tag "geocomplete", nil , class: "form-control" %>
+  <%= f.hidden_field :lat, data: { geo: "lat" } %>
+  <%= f.hidden_field :lng, data: { geo: "lng" } %>
+  <%= f.text_field :city, placeholder: "City", data: { geo: "locality" }, class: "form-control", readonly: "readonly" %>
+  <%= f.text_field :country, placeholder: "Country", data: { geo: "country" }, class: "form-control", readonly: "readonly" %>
+  <%= f.check_box :_destroy %> delete
+</div>

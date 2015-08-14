@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   layout "profile"
   before_filter :load_user
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /location_posts
   def location_posts
@@ -25,7 +26,7 @@ class PostsController < ApplicationController
   # GET users/1/posts/new
   def new
     @post = @user.posts.new
-    @location = @post.locations.new
+    # @location = location.new
   end
 
   # GET /posts/1/edit
@@ -36,8 +37,11 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
+    if params[:location]
+      location = Location.where(lat: params[:location][:lat], lng: params[:location][:lng]).first_or_initialize
+      location.save
+    end
     @post = @user.posts.new(post_params)
-
     respond_to do |format|
       if @post.save
         format.html { redirect_to [@post.user, @post], notice: 'Post was successfully created.' }
@@ -88,8 +92,8 @@ class PostsController < ApplicationController
         :title, 
         :content, 
         :travel_date, 
-        :user_id, 
-        locations_attributes: [ :lat, :lng, :city, :country, :_destroy ] 
+        :user_id 
+        # locations_attributes: [ :lat, :lng, :city, :country, :_destroy ] 
         )
     end
 end

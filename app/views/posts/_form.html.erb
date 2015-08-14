@@ -23,17 +23,9 @@
   </div>
 
   <div class="field">
-    <br><%= f.label :Locations %><br>
-      <%= f.fields_for :locations do |ff| %>
-        <div class="location-detail">
-          <%= ff.check_box :_destroy %> Delete
-          <%= text_field_tag "geocomplete", nil , class: "form-control" %>
-          <%= ff.hidden_field :lat, data: { geo: "lat" } %>
-          <%= ff.hidden_field :lng, data: { geo: "lng" } %>
-          <%= ff.text_field :city, placeholder: "City", data: { geo: "locality" }, class: "form-control", readonly: "readonly" %>
-          <%= ff.text_field :country, placeholder: "Country", data: { geo: "country" }, class: "form-control", readonly: "readonly" %>
-        </div>
-      <% end %>
+    <div class="location-logger"></div>
+    <%= text_field_tag "geocomplete", nil , class: "form-control" %>
+     <a href="#" class="add_location">add</a>
   </div>
 
   <div class="field">

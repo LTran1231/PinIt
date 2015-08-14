@@ -19,7 +19,9 @@
       <tr>
         <td><%= post.title %></td>
         <td><%= post.content %></td>
-        <td><%= post.location %></td>
+        <% post.locations.each do |location| %>
+              <td><%= render "locations/show", location: location %></td>
+            <% end %>
         <td><%= post.travel_date %></td>
         <td><%= link_to 'Show', [post.user, post] %></td>
         <td><%= link_to 'Edit', edit_user_post_path(post.user, post) %></td>
