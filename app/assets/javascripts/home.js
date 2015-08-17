@@ -5,6 +5,7 @@ $(function(){
   sessions.login(".dialog-login");
   
   submitPost.autoCompleteLocation('#geocomplete');
+  submitPost.contentEditor('#summernote');
 
   sendPostsCoordsToFB();
   

@@ -23,12 +23,9 @@ var submitPost = (function(){
 			
 	});
 
-	// var addLocationFields = (function(btnSelector){
-	// 	$(btnSelector).on('click', function(event){
-	// 		event.preventDefault();
-	// 		$('.location-logger').append($(".location-detail"));
-	// 	})
-	// });
+	var contentEditor = (function(cssSelector){
+		$(cssSelector).summernote({height: 300});
+	});
 
 	// var postFormData = (function(formSelector){
 	// 	$(formSelector).on('submit', function(event){
@@ -42,7 +39,7 @@ var submitPost = (function(){
 
 	return {
 		autoCompleteLocation: autoCompleteLocation,
-		// postFormData: postFormData,
+		contentEditor: contentEditor,
 		// addLocationFields: addLocationFields
 	};
 
