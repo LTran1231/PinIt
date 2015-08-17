@@ -6,9 +6,9 @@
 				<%= link_to "Add a new trip", new_user_post_path(current_user) %>
 			</aside>
 			<article class="col-md-9">
-				<ul class="nav nav-tabs">
-				  <li role="presentation" class="active"><a href="#">Home</a></li>
-				  <li role="presentation"><a href="#">Profile</a></li>
+				<ul class="nav nav-tabs post-nav">
+				  <li role="presentation" class="active"><a href="/users/<%= current_user.id %>/posts"><i class="fa fa-list fa-lg"></i></a></li>
+				  <li role="presentation"><a href="#"><i class="fa fa-globe fa-lg"></i></a></li>
 				  <li role="presentation"><a href="#">Messages</a></li>
 				</ul>
 				<%= content_for?(:users_content) ? yield(:users_content) : yield %>
@@ -18,3 +18,4 @@
 <% end %>
 <%= render template: "layouts/application" %>	
 
+<i class="fa fa-list"></i>
