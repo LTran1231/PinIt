@@ -1,16 +1,19 @@
-
 <% content_for :profile do %>
 	<div class="container pad-top-50px">
-		<aside class="one-fourth-left">
-			<div class="col-xs-6 col-md-3">
+		<div class="row">
+			<aside class="col-md-3">
 				<%= render template: "users/show" %>
 				<%= link_to "Add a new trip", new_user_post_path(current_user) %>
-			</div>  
-		</aside>
-
-		<article class="profile-three-fourth-right">
-			<%= content_for?(:users_content) ? yield(:users_content) : yield %>
-		</article>
+			</aside>
+			<article class="col-md-9">
+				<ul class="nav nav-tabs">
+				  <li role="presentation" class="active"><a href="#">Home</a></li>
+				  <li role="presentation"><a href="#">Profile</a></li>
+				  <li role="presentation"><a href="#">Messages</a></li>
+				</ul>
+				<%= content_for?(:users_content) ? yield(:users_content) : yield %>
+			</article>
+		</div>
 	</div>
 <% end %>
 <%= render template: "layouts/application" %>	

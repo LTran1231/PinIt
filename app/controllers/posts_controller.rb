@@ -49,16 +49,6 @@ class PostsController < ApplicationController
     else
       render :new
     end
-
-    # respond_to do |format|
-    #   if @post.save
-    #     format.html { redirect_to [@post.user, @post], notice: 'Post was successfully created.' }
-    #     format.json { render :show, status: :created, location: [@post.user, @post] }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render @post.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   # PATCH/PUT /posts/1
@@ -92,6 +82,7 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = @user.posts.find(params[:id])
+      @post.locations.each {|location| location }
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -101,30 +92,9 @@ class PostsController < ApplicationController
         :content, 
         :travel_date, 
         :user_id, 
-        # pins_attributes: [ :id, post_id:, location_id:, :_destroy ] 
+        locations_attributes: [ :lat, :lng, :address ] 
         )
     end
 end
 
-# if params[:add_location]
-
-#   # location = Location.where(lat: params[:location][:lat], lng: params[:location][:lng], address: params[:location][:address]).first_or_initialize
-#   # location.save
-#   # unless params[:post][:locations_attributes].blank?
-#   #   for attribute in params[:post][:locations_attributes]
-#   #     @post.locations.build(attribute.last.except(:_destroy)) unless attribute.last.has_key?(:id)
-#   #   end
-#   # end
-#   @post.locations.build
-# else
-#   if @post.save
-#     flash[:notice] = "Post was successfully created"
-#     redirect_to [@post.user, @post] and return
-#   end
-# end
-# render :action => "new"
-# if params[:location]
-#   location = Location.where(lat: params[:location][:lat], lng: params[:location][:lng], address: params[:location][:address]).first_or_initialize
-#   location.save
-# end
 
