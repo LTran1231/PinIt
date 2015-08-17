@@ -22,6 +22,7 @@ var submitPost = (function(){
 
 	var contentEditor = (function(cssSelector){
 		$(cssSelector).summernote({height: 300});
+		$(cssSelector).code($('textarea').text());
 	});
 
 	var deletePin = (function(cssSelector){
