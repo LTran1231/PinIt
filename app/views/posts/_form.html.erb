@@ -12,6 +12,10 @@
       </div>
     <% end %>
 
+    <div class="actions">
+      <br><%= f.submit %>
+    </div>
+
     <div class="field">
       <br><%= f.label :title %><br>
       <%= f.text_field :title, class: "form-control" %>
@@ -31,17 +35,8 @@
       <div class="added-address"></div>
       <%= text_field_tag :geocomplete, nil, class: "form-control" %>
       <%= f.fields_for :locations do |location| %>
-      <div class="location-logger">
-
-      </div>
+      <div class="location-logger"></div>
       <% end %>
     </div>
-
-    <div class="actions">
-
-      <br><%= f.submit %>
-    </div>
-
   <% end %>
-
 </div>
