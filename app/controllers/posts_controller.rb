@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   # GET users/1/posts/new
   def new
     @post = @user.posts.new
-    # @location = location.new
+    @post.locations.build
   end
 
   # GET /posts/1/edit
@@ -37,11 +37,13 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    if params[:location]
-      location = Location.where(lat: params[:location][:lat], lng: params[:location][:lng], address: params[:location][:address]).first_or_initialize
+    @post = @user.posts.create(post_params)
+    params[:post][:locations_attributes].each do |location|
+      location = Location.where(address: location[1][:address], lat: location[1][:lat], lng: location[1][:lng]).first_or_initialize
       location.save
+      @post.pins.new(location_id: location.id).save
     end
-    @post = @user.posts.new(post_params)
+
     respond_to do |format|
       if @post.save
         format.html { redirect_to [@post.user, @post], notice: 'Post was successfully created.' }
@@ -92,8 +94,31 @@ class PostsController < ApplicationController
         :title, 
         :content, 
         :travel_date, 
-        :user_id 
-        # locations_attributes: [ :lat, :lng, :city, :country, :_destroy ] 
+        :user_id, 
+        # pins_attributes: [ :id, post_id:, location_id:, :_destroy ] 
         )
     end
 end
+
+# if params[:add_location]
+
+#   # location = Location.where(lat: params[:location][:lat], lng: params[:location][:lng], address: params[:location][:address]).first_or_initialize
+#   # location.save
+#   # unless params[:post][:locations_attributes].blank?
+#   #   for attribute in params[:post][:locations_attributes]
+#   #     @post.locations.build(attribute.last.except(:_destroy)) unless attribute.last.has_key?(:id)
+#   #   end
+#   # end
+#   @post.locations.build
+# else
+#   if @post.save
+#     flash[:notice] = "Post was successfully created"
+#     redirect_to [@post.user, @post] and return
+#   end
+# end
+# render :action => "new"
+# if params[:location]
+#   location = Location.where(lat: params[:location][:lat], lng: params[:location][:lng], address: params[:location][:address]).first_or_initialize
+#   location.save
+# end
+

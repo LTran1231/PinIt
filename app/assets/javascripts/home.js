@@ -4,7 +4,7 @@ $(function(){
   firebase = "https://pinasyougo.firebaseio.com/";
   sessions.login(".dialog-login");
   
-  autocompletePostForm();
+  submitPost.autoCompleteLocation('#geocomplete');
 
   sendPostsCoordsToFB();
   

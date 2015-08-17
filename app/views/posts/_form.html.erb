@@ -1,40 +1,46 @@
+<div class="post-form">
+  <%= form_for([@post.user, @post]) do |f| %>
+    <% if @post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-<%= form_for([@post.user, @post]) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+        <ul>
+        <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="field">
+      <br><%= f.label :title %><br>
+      <%= f.text_field :title, class: "form-control" %>
     </div>
+
+    <div class="field">
+      <br><%= f.label :travel_date %><br>
+      <%= f.date_select :travel_date, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <br><%= f.label :content %><br>
+      <%= f.text_area :content, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= text_field_tag :geocomplete, nil, class: "form-control" %>
+      <%= f.fields_for :locations do |location| %>
+      <div class="location-logger">
+
+      </div>
+      <% end %>
+    </div>
+
+    <div class="actions">
+
+      <br><%= f.submit %>
+    </div>
+
   <% end %>
 
-  <div class="field">
-    <br><%= f.label :title %><br>
-    <%= f.text_field :title, class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <br><%= f.label :content %><br>
-    <%= f.text_area :content, class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <div class="location-logger"></div>
-    <%= text_field_tag "geocomplete", nil , class: "form-control" %>
-     <a href="#" class="add_location">add</a>
-  </div>
-
-  <div class="field">
-    <br><%= f.label :travel_date %><br>
-    <%= f.date_select :travel_date, class: "form-control" %>
-  </div>
-  <div class="actions">
-    <br><%= f.submit %>
-  </div>
-
-<% end %>
-
+</div>
