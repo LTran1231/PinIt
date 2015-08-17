@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-    @posts = @user.posts.all
+    @posts = @user.posts.all.order(updated_at: :desc)
   end
 
   # GET users/1/posts/1
