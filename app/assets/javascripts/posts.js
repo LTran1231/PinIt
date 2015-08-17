@@ -10,7 +10,7 @@ var submitPost = (function(){
 			$(geoCompleteField).val("");
 
 			$('.added-address').html($('.added-address').html() + 
-				"<br>" + result.adr_address + "  <a href='#' class='delete_location'>Delete</a>"
+				"<i class='fa fa-map-marker'></i> " + result.adr_address + "  <a href='#' class='delete_location'>Delete</a><br>"
 			)
 			$('.location-logger').html($('.location-logger').html() + 
 				// "<br>" + result.adr_address + "  <a href='#' class='delete_location'>Delete</a>" +
@@ -26,16 +26,6 @@ var submitPost = (function(){
 	var contentEditor = (function(cssSelector){
 		$(cssSelector).summernote({height: 300});
 	});
-
-	// var postFormData = (function(formSelector){
-	// 	$(formSelector).on('submit', function(event){
-	// 		event.preventDefault(); 
-	// 		$target = $(event.target)
-	// 		var url = $target.attr('action')
-
-	// 		$.post(url, ($(this).serialize()))
-	// 	})
-	// });
 
 	return {
 		autoCompleteLocation: autoCompleteLocation,

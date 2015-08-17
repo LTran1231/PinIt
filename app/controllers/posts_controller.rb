@@ -43,16 +43,22 @@ class PostsController < ApplicationController
       location.save
       @post.pins.new(location_id: location.id).save
     end
-
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to [@post.user, @post], notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: [@post.user, @post] }
-      else
-        format.html { render :new }
-        format.json { render @post.errors, status: :unprocessable_entity }
-      end
+    if @post.save
+      flash[:notice] = "Post was successfully created."
+      redirect_to [@post.user, @post]
+    else
+      render :new
     end
+
+    # respond_to do |format|
+    #   if @post.save
+    #     format.html { redirect_to [@post.user, @post], notice: 'Post was successfully created.' }
+    #     format.json { render :show, status: :created, location: [@post.user, @post] }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render @post.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /posts/1

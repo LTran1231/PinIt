@@ -18,18 +18,13 @@
       <%= f.text_field :title, class: "form-control" %>
     </div>
 
-    <div class="field">
+    <div class="field form-inline">
       <br><%= f.label :travel_date %><br>
-      <%= f.date_select :travel_date, class: "form-control" %>
+      <%= f.date_select :travel_date, {order: [:month, :year]}, {:class=>'form-control'}  %>
     </div>
 
     <div class="field">
-      <br><%= f.label :content %><br>
-      <textarea name="summernote" id="summernote" cols="30" rows="10"></textarea> 
-      <%= f.text_area :content, class: "form-control" %>
-    </div>
-
-    <div class="field">
+      <br><%= label_tag :pins %><br>
       <div class="added-address"></div>
       <%= text_field_tag :geocomplete, nil, class: "form-control" %>
       <%= f.fields_for :locations do |location| %>
@@ -37,8 +32,13 @@
       <% end %>
     </div>
 
+    <div class="field">
+      <br><%= f.label :content %><br>
+      <%= f.text_area :content, class: "form-control summernote-post-editor", cols: "30", rows: "10" %>
+    </div>
+
     <div class="actions">
-      <br><%= f.submit %>
+      <br><%= f.submit "submit", class: "btn btn-default" %>
     </div>
 
   <% end %>
