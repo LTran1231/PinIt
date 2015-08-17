@@ -6,7 +6,8 @@ $(function(){
   
   submitPost.autoCompleteLocation('#geocomplete');
   submitPost.contentEditor('.summernote-post-editor');
-
+  submitPost.deletePin('.delete_location');
+  
   sendPostsCoordsToFB();
   
   L.mapbox.accessToken = "pk.eyJ1IjoibHRyYW4xMjMxIiwiYSI6IjJhNThiNDcxZDczNWQwZTkwNjMxMThhNDE4ZGUyNTA2In0.obLVCvFCcLLDKdV0liwQRQ";
