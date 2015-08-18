@@ -67,9 +67,26 @@ var sessions = (function () {
       })
     })
   });
+
+  var getLoginErrorMsg = (function(cssSelector){
+    $(cssSelector).on('submit', function(event){
+      event.preventDefault();
+      var $target = $(event.target);
+      var url = $target.attr('action');
+
+      var data = $target.serialize();
+      $.post(url, data ).done(function(error){
+        console.log(error);
+        $('.signin-falsh-error').append(error);
+      })
+    })
+  });
+
   return {
-    login: login
+    login: login,
+    getLoginErrorMsg: getLoginErrorMsg
   };
+
 })();
 
 
