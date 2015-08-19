@@ -2,9 +2,11 @@
 $(function(){
   // loginWithFacebook();
   firebase = "https://pinasyougo.firebaseio.com/";
-  sessions.login(".dialog-login");
-  sessions.getErrorMsg(".signin-wrapper form");
-  sessions.getErrorMsg("#dialog-register form");
+  Sessions.signInBtn('.signin-link');
+  Sessions.signUpBtn(".signup-link");
+  Sessions.loginViaThirdParty(".dialog-login");
+  Sessions.getErrorMsg(".signin-wrapper form");
+  Sessions.getErrorMsg("#dialog-register form");
   
   submitPost.autoCompleteLocation('#geocomplete');
   submitPost.contentEditor('.summernote-post-editor');
@@ -23,27 +25,6 @@ $(function(){
   map.scrollWheelZoom.disable();
 
   setMarkers();
-
-  $(document).on('click', '.signin-link', function(event){
-    event.preventDefault();
-    $('.sessions-error-messages').empty();
-    $(".signin-signup li").removeClass('active');
-    $(this).closest('li').addClass('active');
-
-    $('#dialog-register').hide();
-    $('.signin-wrapper').show();
-  });
-
-  $(document).on('click', ".signup-link", function(event){
-    event.preventDefault();
-    
-    $('.sessions-error-messages').empty();
-    $(".signin-signup li").removeClass('active');
-    $(this).closest('li').addClass('active');
-
-    $("#dialog-register").show();
-    $(".signin-wrapper").hide();
-  });
 
   $('.carousel').carousel({
       interval: 2000 //changes the speed

@@ -1,10 +1,38 @@
-var sessions = (function () {
+var Sessions = (function () {
   // users FB reference
   var firebaseRef = new Firebase('https://pinasyougo.firebaseio.com/');
+
+  alertBox = $('.sessions-error-messages');
 
   var routeTo = (function(route) {
     window.location.href = route;
   });
+
+  var signInBtn = (function(cssSelector){
+    $(document).on('click', cssSelector, function(event){
+      event.preventDefault();
+      $('.sessions-error-messages').empty();
+      $(".signin-signup li").removeClass('active');
+      $(this).closest('li').addClass('active');
+
+      $('#dialog-register').hide();
+      $('.signin-wrapper').show();
+    })
+  });
+
+  var signUpBtn = (function(cssSelector){
+    $(document).on('click', cssSelector, function(event){
+      event.preventDefault();
+      
+      $('.sessions-error-messages').empty();
+      $(".signin-signup li").removeClass('active');
+      $(this).closest('li').addClass('active');
+
+      $("#dialog-register").show();
+      $(".signin-wrapper").hide();
+    })    
+  })
+
 
   // when login success route user to their show page 
   // otherwise return error
@@ -27,7 +55,7 @@ var sessions = (function () {
   });
 
   // dealing with login, logout, register
-  var login = (function(target) {
+  var loginViaThirdParty = (function(target) {
 
     $(target).on('click', 'i.social', function(event) {
       event.preventDefault();
@@ -57,13 +85,16 @@ var sessions = (function () {
       $.post(url, data ).done(function(response){
         routeTo(location.origin);
       }).fail(function(error){
+        console.log(error);
         $('.sessions-error-messages').empty().append(error.responseText);
       })
     })
   });
 
   return {
-    login: login,
+    signInBtn: signInBtn,
+    signUpBtn: signUpBtn,
+    loginViaThirdParty: loginViaThirdParty,
     getErrorMsg: getErrorMsg
   };
 
