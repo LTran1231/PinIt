@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   		session[:user_id] = @user.id
 			render @user
 		else
-			render json: @user.errors.full_messages, status: 401, layout: false
+			render "shared/_error_messages", status: 401, layout: false
 		end
 	end
 

@@ -64,17 +64,20 @@ var sessions = (function () {
       $.post(url, data ).done(function(response){
         routeTo(location.origin);
       }).fail(function(error){
-        console.log(error.responseText);
-        if (error.responseText.length > 1)
-          console.log(error)
-          debugger;
-        else
-          $('.sessions-error-messages').empty()
-          .append("<p class='alert alert-danger'>"+(error.responseText)+"</p>");
+        $('.sessions-error-messages').empty().append(error.responseText);
       })
     })
   });
 
+  var showAlert = function(opts) {
+    // var title = opts.title;
+    var detail = opts.detail;
+    var className = 'alert ' + opts.className;
+
+    alertBox.removeClass().addClass(className);
+    // alertBox.children('#alert-title').text(title);
+    alertBox.children('#alert-detail').text(detail);
+  };
 
   return {
     login: login,

@@ -19,8 +19,8 @@ class SessionsController < ApplicationController
   		session[:user_id] = user.id
       render json: user 
   	else
-			errors = 'invalid email/password'
-  		render json: errors, status: 401, layout: false
+			flash.now[:danger] = 'invalid email/password'
+  		render "shared/_flash_messages", status: 401, layout: false
   	end
   end
 
