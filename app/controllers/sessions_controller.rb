@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   def login_via_social_media
     user = params[:user]
     provider = params[:provider]
-    @user = User.create_from_provider(user, provider)
+    @user = UsersHelper.create_from_provider(user, provider)
     session[:user_id] = @user.id
     render json: current_user
   end

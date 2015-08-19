@@ -17,9 +17,7 @@ class UsersController < ApplicationController
 
 	# CREATE A NEW USER
 	def create
-		p params
 		@user = User.new(user_params)
-		p @user
 		if @user.save
   		session[:user_id] = @user.id
 			render json: @user

@@ -20,20 +20,6 @@ var Sessions = (function () {
     })
   });
 
-  // var signUpBtn = (function(cssSelector){
-  //   $(document).on('click', cssSelector, function(event){
-  //     event.preventDefault();
-      
-  //     $('.sessions-error-messages').empty();
-  //     $(".signin-signup li").removeClass('active');
-  //     $(this).closest('li').addClass('active');
-
-  //     $("#dialog-register").show();
-  //     $(".signin-wrapper").hide();
-  //   })    
-  // })
-
-
   // when login success route user to their show page 
   // otherwise return error
   var handleAuthData = (function(promise) {
@@ -64,9 +50,8 @@ var Sessions = (function () {
       var provider = $currentButton.attr('title');
       firebaseRef.authWithOAuthPopup(provider, function(error, authData){
         if (error)
-          console.log(error);
+          console.log(error)
         if (authData)
-          console.log(authData)
           firebaseRef.child("users").child(authData.uid).set({
             provider: authData.provider,
             name: getProvider(authData).displayName
@@ -85,7 +70,6 @@ var Sessions = (function () {
       $.post(url, data ).done(function(response){
         routeTo(location.origin);
       }).fail(function(error){
-        console.log(error);
         $('.sessions-error-messages').empty().append(error.responseText);
       })
     })

@@ -14,26 +14,26 @@
     <br/>
     <div class="input-group">
       <span class="input-group-addon" id="basic-addon1">https://facebook.com/</span>
-    	<%= f.text_field :facebook_url , class: "form-control", value: "#{@user.uid}", "aria-describedby" => "basic-addon1" %>
+    	<%= f.text_field :facebook_url, class: "form-control", value: "#{@user.facebook_url}", "aria-describedby" => "basic-addon1" %>
     </div>
     <br/>
 
 
     <div class="input-group">
       <span class="input-group-addon" id="basic-addon2">https://plus.google.com/</span>
-    	<%= f.text_field :google_url , class: "form-control", "aria-describedby" => "basic-addon2" %>
+    	<%= f.text_field :google_url, class: "form-control", value: "#{@user.google_url}", "aria-describedby" => "basic-addon2" %>
     </div>
     <br/>
 
     <div class="input-group">
       <span class="input-group-addon" id="basic-addon3">https://instagram.com/</span>
-      <%= f.text_field :instagram , class: "form-control", "aria-describedby" => "basic-addon3" %>
+      <%= f.text_field :instagram, class: "form-control", "aria-describedby" => "basic-addon3" %>
     </div>
     <br/>
 
     <div class="input-group">
       <span class="input-group-addon" id="basic-addon4">https://twitter.com/</span>
-      <%= f.text_field :twitter , class: "form-control", "aria-describedby" => "basic-addon4" %>
+      <%= f.text_field :twitter, class: "form-control", "aria-describedby" => "basic-addon4" %>
     </div>    
     <br/>
 
