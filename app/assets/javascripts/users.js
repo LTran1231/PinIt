@@ -12,13 +12,6 @@ var sessions = (function () {
     $.post("/login_via_social_media", { user: getProvider(promise), provider: promise.provider })
     .done(function(response){
       routeTo(location.origin);
-    }, function (err) {
-      console.log(err);
-      showAlert({
-        title: err.code,
-        detail: err.message,
-        className: 'alert-danger'
-      });
     })
   });
 
@@ -68,16 +61,6 @@ var sessions = (function () {
       })
     })
   });
-
-  var showAlert = function(opts) {
-    // var title = opts.title;
-    var detail = opts.detail;
-    var className = 'alert ' + opts.className;
-
-    alertBox.removeClass().addClass(className);
-    // alertBox.children('#alert-title').text(title);
-    alertBox.children('#alert-detail').text(detail);
-  };
 
   return {
     login: login,

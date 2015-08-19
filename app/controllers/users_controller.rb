@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 		p @user
 		if @user.save
   		session[:user_id] = @user.id
-			render @user
+			render json: @user
 		else
 			render "shared/_error_messages", status: 401, layout: false
 		end

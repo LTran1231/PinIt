@@ -26,7 +26,7 @@ $(function(){
 
   $(document).on('click', '.signin-link', function(event){
     event.preventDefault();
-
+    $('.sessions-error-messages').empty();
     $(".signin-signup li").removeClass('active');
     $(this).closest('li').addClass('active');
 
@@ -36,10 +36,10 @@ $(function(){
 
   $(document).on('click', ".signup-link", function(event){
     event.preventDefault();
+    
+    $('.sessions-error-messages').empty();
     $(".signin-signup li").removeClass('active');
     $(this).closest('li').addClass('active');
-    // $(".signup-popover").show();
-    // $(".signin-popover").hide();
 
     $("#dialog-register").show();
     $(".signin-wrapper").hide();
