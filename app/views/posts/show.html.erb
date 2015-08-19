@@ -2,7 +2,9 @@
 
 <p>
   <strong>Title:</strong>
-  <%= @post.title %>
+  <%= @post.title %><br>
+  Submited by: <%= @post.user.name %>
+
 </p>
 
 <p>
@@ -11,8 +13,10 @@
 </p>
 
 <p>
-  <strong>location:</strong>
-  <%= @post.location %>
+  <strong>locations:</strong>
+  <% @post.locations.each do |location|%>
+    <%= render "locations/show", location: location %>
+  <% end %>
 </p>
 
 <p>
@@ -20,10 +24,7 @@
   <%= @post.travel_date %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user %>
-</p>
+
 
 <%= link_to 'Edit', edit_user_post_path(@post.user, @post) %> |
 <%= link_to 'Back', user_posts_path(current_user) %>

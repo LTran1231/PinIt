@@ -7,14 +7,14 @@ gem 'rails', '4.2.3'
 gem 'pg'
 
 gem 'bootstrap-sass'
-gem 'bootstrap-social-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'font-awesome-rails'
 gem 'awesome_print'
+# This is the right gem to use summernote editor in Rails projects.
+gem 'summernote-rails'
 
 
-
-
+# To solve the problems on the turbolinks
 gem 'jquery-turbolinks'
 
 # Use Uglifier as compressor for JavaScript assets

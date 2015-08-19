@@ -2,8 +2,8 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
-//= require bootstrap-sprockets 
-//= require turbolinks
+//= require bootstrap
+//= require summernote
 //= require_tree .
+//= require turbolinks
 

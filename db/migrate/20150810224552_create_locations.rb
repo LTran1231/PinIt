@@ -3,8 +3,7 @@ class CreateLocations < ActiveRecord::Migration
     create_table :locations do |t|
       t.float :lat
       t.float :lng
-      t.string :city
-      t.string :country
+      t.string :address
 
       t.timestamps null: false
     end

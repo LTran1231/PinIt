@@ -20,9 +20,9 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
   		session[:user_id] = @user.id
-			redirect_to @user
+			render json: @user
 		else
-			render 'new'
+			render "shared/_error_messages", status: 401, layout: false
 		end
 	end
 

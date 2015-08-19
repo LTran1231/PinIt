@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get 'posts_data' => 'home#posts_data'
 
+  post 'save_location' => 'locations#save_location'
+
 
 
 

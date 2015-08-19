@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   def login_via_social_media
     user = params[:user]
     provider = params[:provider]
-    @user = User.create_from_provider(user, provider)
+    @user = UsersHelper.create_from_provider(user, provider)
     session[:user_id] = @user.id
     render json: current_user
   end
@@ -17,10 +17,10 @@ class SessionsController < ApplicationController
   	user = User.find_by(email: params[:session][:email].downcase)
   	if user && user.authenticate(params[:session][:password])
   		session[:user_id] = user.id
-      redirect_to user 
+      render json: user 
   	else
 			flash.now[:danger] = 'invalid email/password'
-  		render 'new'
+  		render "shared/_flash_messages", status: 401, layout: false
   	end
   end
 

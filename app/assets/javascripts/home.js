@@ -2,9 +2,16 @@
 $(function(){
   // loginWithFacebook();
   firebase = "https://pinasyougo.firebaseio.com/";
-  sessions.login(".dialog-login");
-  autocompletePostForm();
-
+  Sessions.btnListener('.signin-link', '#dialog-register', '.signin-wrapper');
+  Sessions.btnListener('.signup-link', '.signin-wrapper', '#dialog-register');
+  Sessions.loginViaThirdParty(".dialog-login");
+  Sessions.getErrorMsg(".signin-wrapper form");
+  Sessions.getErrorMsg("#dialog-register form");
+  
+  submitPost.autoCompleteLocation('#geocomplete');
+  submitPost.contentEditor('.summernote-post-editor');
+  submitPost.deletePin('.delete_location');
+  
   sendPostsCoordsToFB();
   
   L.mapbox.accessToken = "pk.eyJ1IjoibHRyYW4xMjMxIiwiYSI6IjJhNThiNDcxZDczNWQwZTkwNjMxMThhNDE4ZGUyNTA2In0.obLVCvFCcLLDKdV0liwQRQ";
@@ -18,27 +25,6 @@ $(function(){
   map.scrollWheelZoom.disable();
 
   setMarkers();
-
-  $(document).on('click', '.signin-link', function(event){
-    event.preventDefault();
-
-    $(".signin-signup li").removeClass('active');
-    $(this).closest('li').addClass('active');
-
-    $('#dialog-register').hide();
-    $('.signin-wrapper').show();
-  });
-
-  $(document).on('click', ".signup-link", function(event){
-    event.preventDefault();
-    $(".signin-signup li").removeClass('active');
-    $(this).closest('li').addClass('active');
-    // $(".signup-popover").show();
-    // $(".signin-popover").hide();
-
-    $("#dialog-register").show();
-    $(".signin-wrapper").hide();
-  });
 
   $('.carousel').carousel({
       interval: 10000 //changes the speed

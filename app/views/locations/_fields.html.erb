@@ -1,0 +1,7 @@
+<div class="location-detail">
+	<%= f.text_field :address, class: "form-control geocomplete" %>
+  <%= f.text_field :lat, data: { geo: "lat" } %>
+  <%= f.text_field :lng, data: { geo: "lng" } %>
+
+  <%= f.check_box :_destroy %> delete
+</div>

@@ -5,41 +5,42 @@
         <h3 id="<%= @user.name %>"><%= @user.name %></h3>
         <p><%= mail_to @user.email %></p>
         <p>Member since <%= Date.parse(@user.created_at.to_s) %></p>
+        <div class="wrapper">
+	        <div class="row">
+						<div class="col-xs-3"> 
+							<a href="https://facebook.com/<%= @user.facebook_url %>">
+								<span class="fa-stack fa-lg">
+								  <i class="fa fa-circle fa-stack-2x"></i>
+								  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+								</span>
+							</a>
+						</div>
+						<div class="col-xs-3">
+							<a href="https://twitter.com/<%= @user.twitter %>">
+								<span class="fa-stack fa-lg">
+								  <i class="fa fa-circle fa-stack-2x"></i>
+								  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+								</span>
+							</a>
+						</div>
+						<div class="col-xs-3">
+							<a href="https://instagram.com/<%= @user.instagram %>">
+								<span class="fa-stack fa-lg">
+								  <i class="fa fa-circle fa-stack-2x"></i>
+								  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+								</span>
+							</a>
+						</div>
+						<div class="col-xs-3">
+							<a href="https://plus.google.com/<%= @user.google_url %>">
+								<span class="fa-stack fa-lg">
+								  <i class="fa fa-circle fa-stack-2x"></i>
+								  <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+								</span>
+							</a>
+						</div>
 
-        <div class="social-media">
-					<li> 
-						<a href="https://facebook.com/<%= @user.uid %>">
-							<span class="fa-stack fa-lg">
-							  <i class="fa fa-circle fa-stack-2x"></i>
-							  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href="https://twitter.com/<%= @user.twitter %>">
-							<span class="fa-stack fa-lg">
-							  <i class="fa fa-circle fa-stack-2x"></i>
-							  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href="https://instagram.com/<%= @user.instagram %>">
-							<span class="fa-stack fa-lg">
-							  <i class="fa fa-circle fa-stack-2x"></i>
-							  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href="https://plus.google.com/<%= @user.google_url %>">
-							<span class="fa-stack fa-lg">
-							  <i class="fa fa-circle fa-stack-2x"></i>
-							  <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
-							</span>
-						</a>
-					</li>
-
+	        </div>
         </div>
 
       </div>
