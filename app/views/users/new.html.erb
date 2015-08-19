@@ -1,10 +1,8 @@
 
-<div id="dialog-register", title="Register new user", style="display: none">
+<div id="dialog-register", title="Register new user", style="display: none;">
 
 	<%= form_for(:user, url: users_path) do |f| %>
-    <% if @user %>
-		<%= render 'shared/error_messages' %>
-    <% end %>
+    <div class="sessions-error-messages"></div>
 
   	<%= f.text_field :name, class: "form-control", placeholder: "Name" %><br/>
 

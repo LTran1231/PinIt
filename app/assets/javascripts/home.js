@@ -3,7 +3,8 @@ $(function(){
   // loginWithFacebook();
   firebase = "https://pinasyougo.firebaseio.com/";
   sessions.login(".dialog-login");
-  sessions.getLoginErrorMsg(".signin-wrapper form");
+  sessions.getErrorMsg(".signin-wrapper form");
+  sessions.getErrorMsg("#dialog-register form");
   
   submitPost.autoCompleteLocation('#geocomplete');
   submitPost.contentEditor('.summernote-post-editor');

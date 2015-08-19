@@ -14,14 +14,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    p params
   	user = User.find_by(email: params[:session][:email].downcase)
   	if user && user.authenticate(params[:session][:password])
   		session[:user_id] = user.id
-      redirect_to user 
+      render json: user 
   	else
-			flash.now[:danger] = 'invalid email/password'
-  		render "shared/_flash_messages", layout: false
+			errors = 'invalid email/password'
+  		render json: errors, status: 401, layout: false
   	end
   end
 

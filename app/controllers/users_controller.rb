@@ -17,12 +17,14 @@ class UsersController < ApplicationController
 
 	# CREATE A NEW USER
 	def create
+		p params
 		@user = User.new(user_params)
+		p @user
 		if @user.save
   		session[:user_id] = @user.id
-			redirect_to @user
+			render @user
 		else
-			render 'new'
+			render json: @user.errors.full_messages, status: 401, layout: false
 		end
 	end
 

@@ -2,8 +2,6 @@ var sessions = (function () {
   // users FB reference
   var firebaseRef = new Firebase('https://pinasyougo.firebaseio.com/');
 
-  var alertBox = $('.alert');
-
   var routeTo = (function(route) {
     window.location.href = route;
   });
@@ -35,17 +33,6 @@ var sessions = (function () {
     }
   });
 
-  // append errors 
-  var showAlert = (function(opts) {
-    var title = opts.title;
-    var detail = opts.detail;
-    var className = 'alert ' + opts.className;
-
-    alertBox.removeClass().addClass(className);
-    alertBox.children('#alert-title').text(title);
-    alertBox.children('#alert-detail').text(detail);
-  });
-
   // dealing with login, logout, register
   var login = (function(target) {
 
@@ -68,23 +55,30 @@ var sessions = (function () {
     })
   });
 
-  var getLoginErrorMsg = (function(cssSelector){
+  var getErrorMsg = (function(cssSelector){
     $(cssSelector).on('submit', function(event){
       event.preventDefault();
       var $target = $(event.target);
       var url = $target.attr('action');
-
       var data = $target.serialize();
-      $.post(url, data ).done(function(error){
-        console.log(error);
-        $('.signin-falsh-error').append(error);
+      $.post(url, data ).done(function(response){
+        routeTo(location.origin);
+      }).fail(function(error){
+        console.log(error.responseText);
+        if (error.responseText.length > 1)
+          console.log(error)
+          debugger;
+        else
+          $('.sessions-error-messages').empty()
+          .append("<p class='alert alert-danger'>"+(error.responseText)+"</p>");
       })
     })
   });
 
+
   return {
     login: login,
-    getLoginErrorMsg: getLoginErrorMsg
+    getErrorMsg: getErrorMsg
   };
 
 })();
