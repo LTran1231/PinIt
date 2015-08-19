@@ -8,30 +8,30 @@ var Sessions = (function () {
     window.location.href = route;
   });
 
-  var signInBtn = (function(cssSelector){
-    $(document).on('click', cssSelector, function(event){
+  var btnListener = (function(cssLink, cssHide, cssShow){
+    $(document).on('click', cssLink, function(event){
       event.preventDefault();
       $('.sessions-error-messages').empty();
       $(".signin-signup li").removeClass('active');
       $(this).closest('li').addClass('active');
 
-      $('#dialog-register').hide();
-      $('.signin-wrapper').show();
+      $(cssHide).hide();
+      $(cssShow).show();
     })
   });
 
-  var signUpBtn = (function(cssSelector){
-    $(document).on('click', cssSelector, function(event){
-      event.preventDefault();
+  // var signUpBtn = (function(cssSelector){
+  //   $(document).on('click', cssSelector, function(event){
+  //     event.preventDefault();
       
-      $('.sessions-error-messages').empty();
-      $(".signin-signup li").removeClass('active');
-      $(this).closest('li').addClass('active');
+  //     $('.sessions-error-messages').empty();
+  //     $(".signin-signup li").removeClass('active');
+  //     $(this).closest('li').addClass('active');
 
-      $("#dialog-register").show();
-      $(".signin-wrapper").hide();
-    })    
-  })
+  //     $("#dialog-register").show();
+  //     $(".signin-wrapper").hide();
+  //   })    
+  // })
 
 
   // when login success route user to their show page 
@@ -92,8 +92,7 @@ var Sessions = (function () {
   });
 
   return {
-    signInBtn: signInBtn,
-    signUpBtn: signUpBtn,
+    btnListener: btnListener,
     loginViaThirdParty: loginViaThirdParty,
     getErrorMsg: getErrorMsg
   };

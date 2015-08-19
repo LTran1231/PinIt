@@ -2,8 +2,8 @@
 $(function(){
   // loginWithFacebook();
   firebase = "https://pinasyougo.firebaseio.com/";
-  Sessions.signInBtn('.signin-link');
-  Sessions.signUpBtn(".signup-link");
+  Sessions.btnListener('.signin-link', '#dialog-register', '.signin-wrapper');
+  Sessions.btnListener('.signup-link', '.signin-wrapper', '#dialog-register');
   Sessions.loginViaThirdParty(".dialog-login");
   Sessions.getErrorMsg(".signin-wrapper form");
   Sessions.getErrorMsg("#dialog-register form");
