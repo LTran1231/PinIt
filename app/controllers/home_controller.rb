@@ -12,10 +12,9 @@ class HomeController < ApplicationController
     pins.each do |pin|
       postId = pin.post_id
       coords = [pin.location.lat, pin.location.lng]
-      pinData << {postId: postId, coords: coords}
+      pinData << { "#{postId}" => {coords: coords} }
     end
 
-
-    render json: pins
+    render json: pinData
   end
 end

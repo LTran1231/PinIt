@@ -2,6 +2,8 @@
 $(function(){
   // loginWithFacebook();
   firebase = "https://pinasyougo.firebaseio.com/";
+  fbPostsRef = new Firebase(firebase + "posts/");
+
   Sessions.btnListener('.signin-link', '#dialog-register', '.signin-wrapper');
   Sessions.btnListener('.signup-link', '.signin-wrapper', '#dialog-register');
   Sessions.loginViaThirdParty(".dialog-login");
@@ -35,45 +37,62 @@ $(function(){
 var sendPostsCoordsToFB = function () {
   $.get('/posts_data').done(function (pinsData) {
     console.log(pinsData);
-    debugger
     // send data to firebase storage
-    var list_coords = posts.reduce(function(object, coords, index) {
-      object[index] = JSON.parse("[" + coords.join() + "]");
-      return object;
-    }, {});
-    console.log(list_coords)
+    // var list_coords = posts.reduce(function(object, coords, index) {
+    //   object[index] = JSON.parse("[" + coords.join() + "]");
+    //   return object;
+    // }, {});
+    // console.log(list_coords)
     // remove existing coords and add list
-    base.remove();
-    var firebaseCoords = base.push(list_coords);
-    console.log(firebaseCoords)
+    fbPostsRef.remove();
+    var firebaseCoords = fbPostsRef.set(pinsData);
+
+    // console.log(firebaseCoords)
   });
 }
 
 
 
 var setMarkers = function() {
-  firebaseRef = new Firebase(firebase + "posts/");
-
-  firebaseRef.on('child_added', function(snapshot){
-    // var features = []
-    for (var k in snapshot.val()) {
-      // generate random color for the marker
+  var count = 0;
+  fbPostsRef.on("child_added", function(snap) {
+    count++;
+    // console.log("added", snap.key());
+    for(var k in snap.val()){
       color = '#' + [
       (~~(Math.random() * 16)).toString(16),
       (~~(Math.random() * 16)).toString(16),
       (~~(Math.random() * 16)).toString(16)].join('');
-      var postID = snapshot.val()  
-      console.log(postID)
-      var post = snapshot.val()  
-      console.log(post)
-      var postion = snapshot.val()[k];
+
+      var postion = snap.val()[k].coords;
       var marker = L.marker(postion, {
-        draggable: true,
+        draggable: false,
         icon: L.mapbox.marker.icon({
           'marker-color': color
         })
       }).addTo(map)
-    }
-
+    }  
   });
+
+  // fbPostsRef.on('child_added', function(snapshot){
+  //   // var features = []
+  //   console.log(snapshot);
+
+  //   for (var k in snapshot.val()) {
+  //     // generate random color for the marker
+      
+  //     var postID = snapshot.val()  
+  //     console.log(postID)
+  //     var post = snapshot.val()  
+  //     console.log(post)
+  //     var postion = snapshot.val()[k];
+  //     var marker = L.marker(postion, {
+  //       draggable: true,
+  //       icon: L.mapbox.marker.icon({
+  //         'marker-color': color
+  //       })
+  //     }).addTo(map)
+  //   }
+
+  // });
 }
