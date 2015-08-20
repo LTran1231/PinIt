@@ -7,11 +7,15 @@ class HomeController < ApplicationController
   end
 
   def posts_data
-    posts = Post.all
-    coords = []
-    posts.each do |post|
-    	coords << [post.lat, post.lng]
+    pins = Pin.all
+    pinData = []
+    pins.each do |pin|
+      postId = pin.post_id
+      coords = [pin.location.lat, pin.location.lng]
+      pinData << {postId: postId, coords: coords}
     end
-    render json: coords
+
+
+    render json: pins
   end
 end

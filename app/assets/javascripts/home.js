@@ -33,8 +33,9 @@ $(function(){
 
 
 var sendPostsCoordsToFB = function () {
-  $.get('/posts_data').done(function (posts) {
-    console.log(posts)
+  $.get('/posts_data').done(function (pinsData) {
+    console.log(pinsData);
+    debugger
     // send data to firebase storage
     var list_coords = posts.reduce(function(object, coords, index) {
       object[index] = JSON.parse("[" + coords.join() + "]");
