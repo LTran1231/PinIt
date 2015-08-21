@@ -1,7 +1,9 @@
 
 $(function(){
-  // loginWithFacebook();
+
   firebase = "https://pinasyougo.firebaseio.com/";
+  fbPostsRef = new Firebase(firebase + "posts/");
+
   Sessions.btnListener('.signin-link', '#dialog-register', '.signin-wrapper');
   Sessions.btnListener('.signup-link', '.signin-wrapper', '#dialog-register');
   Sessions.loginViaThirdParty(".dialog-login");
@@ -12,67 +14,77 @@ $(function(){
   submitPost.contentEditor('.summernote-post-editor');
   submitPost.deletePin('.delete_location');
   
-  sendPostsCoordsToFB();
-  
   L.mapbox.accessToken = "pk.eyJ1IjoibHRyYW4xMjMxIiwiYSI6IjJhNThiNDcxZDczNWQwZTkwNjMxMThhNDE4ZGUyNTA2In0.obLVCvFCcLLDKdV0liwQRQ";
-  map = L.mapbox.map(document.getElementById("map"), "ltran1231.mmfe4jdj", {
-    zoomControl: false
-  }).setView([45.706, 11.953], 2);
+  pinItMapBox = "ltran1231.mmfe4jdj"
+
+  map = L.mapbox.map(document.getElementById("map"), pinItMapBox, {
+    // zoomControl: false
+  }).setView([45.706, 11.953], 2)
+
   
   map.dragging.disable();
-  map.touchZoom.disable();
-  map.doubleClickZoom.disable();
-  map.scrollWheelZoom.disable();
+  // map.touchZoom.disable();
+  // map.doubleClickZoom.disable();
+  // map.scrollWheelZoom.disable();
 
-  setMarkers();
+  Map.sendPostsCoordsToFB('/posts_data');
+  Map.setMarkers();
 
-  $('.carousel').carousel({
-      interval: 10000 //changes the speed
-  })
+
+  // $('.carousel').carousel({
+  //     interval: 10000 //changes the speed
+  // })
 });
 
+var Map = (function(){
 
-var sendPostsCoordsToFB = function () {
-  $.get('/posts_data').done(function (posts) {
-    console.log(posts)
-    // send data to firebase storage
-    var list_coords = posts.reduce(function(object, coords, index) {
-      object[index] = JSON.parse("[" + coords.join() + "]");
-      return object;
-    }, {});
-    console.log(list_coords)
-    // remove existing coords and add list
-    base.remove();
-    var firebaseCoords = base.push(list_coords);
-    console.log(firebaseCoords)
+  var sendPostsCoordsToFB = (function (getRoute) {
+    $.get(getRoute).done(function (pinsData) {
+      fbPostsRef.remove();
+      var firebaseCoords = fbPostsRef.set(pinsData);
+    })
   });
-}
 
+  var setMarkers = (function() {
+    var markers = new L.MarkerClusterGroup();
+    fbPostsRef.on("child_added", function(snap) {
 
+      for(var k in snap.val()){
+        var color = '#' + [
+        (~~(Math.random() * 16)).toString(16),
+        (~~(Math.random() * 16)).toString(16),
+        (~~(Math.random() * 16)).toString(16)].join('');
+        var title = k;
 
-var setMarkers = function() {
-  firebaseRef = new Firebase(firebase + "posts/");
-
-  firebaseRef.on('child_added', function(snapshot){
-    // var features = []
-    for (var k in snapshot.val()) {
-      // generate random color for the marker
-      color = '#' + [
-      (~~(Math.random() * 16)).toString(16),
-      (~~(Math.random() * 16)).toString(16),
-      (~~(Math.random() * 16)).toString(16)].join('');
-      var postID = snapshot.val()  
-      console.log(postID)
-      var post = snapshot.val()  
-      console.log(post)
-      var postion = snapshot.val()[k];
-      var marker = L.marker(postion, {
-        draggable: true,
-        icon: L.mapbox.marker.icon({
-          'marker-color': color
+        var postion = snap.val()[k].coords;
+        var marker = L.marker(postion, {
+          draggable: false,
+          icon: L.mapbox.marker.icon({
+            'marker-symbol': '',
+            'marker-color': color
+          }),
+          title: title
         })
-      }).addTo(map)
-    }
 
+        marker.bindPopup(title);
+        markers.addLayer(marker);
+
+      }
+    })
+    map.addLayer(markers);  
   });
-}
+
+
+  return {
+    sendPostsCoordsToFB: sendPostsCoordsToFB,
+    setMarkers: setMarkers,
+    // featureLayer: featureLayer
+  }
+})();
+
+
+
+
+
+
+
