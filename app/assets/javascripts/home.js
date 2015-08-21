@@ -22,9 +22,9 @@ $(function(){
   }).setView([45.706, 11.953], 2)
 
   
-  // map.dragging.disable();
+  map.dragging.disable();
   // map.touchZoom.disable();
-  // // map.doubleClickZoom.disable();
+  // map.doubleClickZoom.disable();
   // map.scrollWheelZoom.disable();
 
   Map.sendPostsCoordsToFB('/posts_data');
