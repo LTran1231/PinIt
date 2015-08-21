@@ -30,6 +30,7 @@ $(function(){
   Map.sendPostsCoordsToFB('/posts_data');
   Map.setMarkers();
 
+
   // $('.carousel').carousel({
   //     interval: 10000 //changes the speed
   // })
@@ -45,12 +46,8 @@ var Map = (function(){
   });
 
   var setMarkers = (function() {
-    var count = 0;
+    var markers = new L.MarkerClusterGroup();
     fbPostsRef.on("child_added", function(snap) {
-      count++;
-      // console.log("added", snap.key());
-  var markers = new L.MarkerClusterGroup();
-
 
       for(var k in snap.val()){
         var color = '#' + [
@@ -63,7 +60,7 @@ var Map = (function(){
         var marker = L.marker(postion, {
           draggable: false,
           icon: L.mapbox.marker.icon({
-            'marker-symbol': 'post',
+            'marker-symbol': '',
             'marker-color': color
           }),
           title: title
@@ -73,9 +70,10 @@ var Map = (function(){
         markers.addLayer(marker);
 
       }
-      map.addLayer(markers);  
     })
+    map.addLayer(markers);  
   });
+
 
   return {
     sendPostsCoordsToFB: sendPostsCoordsToFB,
