@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'home/index'
+  post 'search' => 'home#search'
 
   get 'signup' => 'users#new'
   get 'login'  => 'sessions#new'

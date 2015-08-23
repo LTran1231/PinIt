@@ -2,6 +2,10 @@ class HomeController < ApplicationController
   def index
   end
 
+  def search
+    
+  end
+
   def user_data
     render json: current_user
   end

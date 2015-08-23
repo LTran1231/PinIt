@@ -1,1 +1,13 @@
-<div class="fill" id="map"></div>
+<div class="item">
+	<div class="fill" id="map"></div>
+  <div class="search-wrapper form-inline">
+    <%= form_for search_path do |f| %>
+    	<div class="form-group">
+		    <%= text_field_tag "searchGeocomplete", nil, class: "form-control"%>
+    	</div>
+    	<div class="form-group">
+		    <%= f.submit "Search", class: "btn btn-default" %>
+    	</div>
+    <% end %>
+  </div>
+</div>

@@ -34,13 +34,16 @@ $(function(){
   // $('.carousel').carousel({
   //     interval: 10000 //changes the speed
   // })
+  
+  Search('#searchGeocomplete');
+
 });
 
 var Map = (function(){
 
   var sendPostsCoordsToFB = (function (getRoute) {
     $.get(getRoute).done(function (pinsData) {
-      fbPostsRef.remove();
+      // fbPostsRef.remove();
       var firebaseCoords = fbPostsRef.set(pinsData);
     })
   });
@@ -82,6 +85,10 @@ var Map = (function(){
   }
 })();
 
+var Search = (function(cssForm){
+  $(cssForm).geocomplete({
+  })
+});
 
 
 
