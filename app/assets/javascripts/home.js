@@ -23,9 +23,9 @@ $(function(){
 
   
   map.dragging.disable();
-  // map.touchZoom.disable();
-  // map.doubleClickZoom.disable();
-  // map.scrollWheelZoom.disable();
+  map.touchZoom.disable();
+  map.doubleClickZoom.disable();
+  map.scrollWheelZoom.disable();
 
   Map.sendPostsCoordsToFB('/posts_data');
   Map.setMarkers();
