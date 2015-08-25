@@ -1,0 +1,16 @@
+<div class="search-wrapper">
+	<div class="col-sm-12">
+		<div class="searchbar">
+	    <%= form_for search_path do |f| %>
+				<div class="input-group add-on">
+				    <%= text_field_tag "searchGeocomplete", nil, class: "form-control"%>
+				    <div class="input-group-btn">
+					    <%= button_tag(type: "submit", class: "btn btn-default") do %>
+					    	<i class="fa fa-search"></i>
+					    <% end %>
+				    </div>
+				</div>
+	    <% end %>
+		</div>
+	</div>
+</div>

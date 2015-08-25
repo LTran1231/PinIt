@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get 'home/index'
-  post 'search' => 'home#search'
+  post 'search' => 'home#index'
 
   get 'signup' => 'users#new'
   get 'login'  => 'sessions#new'

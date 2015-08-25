@@ -3,7 +3,8 @@ class HomeController < ApplicationController
   end
 
   def search
-    
+    p params
+    byebug
   end
 
   def user_data

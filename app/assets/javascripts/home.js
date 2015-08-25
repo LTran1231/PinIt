@@ -35,7 +35,8 @@ $(function(){
   //     interval: 10000 //changes the speed
   // })
   
-  Search('#searchGeocomplete');
+  Search.autoComplete('#searchGeocomplete');
+  Search.submitFrom('.searchbar');
 
 });
 
@@ -63,7 +64,7 @@ var Map = (function(){
         var marker = L.marker(postion, {
           draggable: false,
           icon: L.mapbox.marker.icon({
-            'marker-symbol': '',
+            'marker-symbol': 'post',
             'marker-color': color
           }),
           title: title
@@ -85,10 +86,31 @@ var Map = (function(){
   }
 })();
 
-var Search = (function(cssForm){
-  $(cssForm).geocomplete({
+var Search = (function(){
+  var autoComplete = (function(cssForm){
+    $(cssForm).geocomplete({
+    })
+  });
+
+
+  var submitFrom = (function(cssForm){
+    $(cssForm).on('submit', function(event){
+      event.preventDefault();
+      $target = $(event.target);
+      var url = '/search';
+      var data = $target.serialize()
+      $.post(url, data).done(function(data){
+        console.log(data);
+      })
+    })
   })
-});
+
+  return {
+    autoComplete: autoComplete,
+    submitFrom: submitFrom,
+  }
+
+})();
 
 
 
