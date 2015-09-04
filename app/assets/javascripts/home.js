@@ -35,7 +35,7 @@ $(function(){
   //     interval: 10000 //changes the speed
   // })
   
-  Search.autoComplete('#searchGeocomplete');
+  Search.autoComplete('#_search_Geocomplete');
   Search.submitFrom('.searchbar');
 
 });
@@ -89,17 +89,25 @@ var Map = (function(){
 var Search = (function(){
   var autoComplete = (function(cssForm){
     $(cssForm).geocomplete({
+
     })
+    .bind("geocode:result", function(event, result){
+      lat = result.geometry.location.lat(); 
+      lng = result.geometry.location.lng();
+      map.setView(new L.LatLng(lat, lng), 8);
+
+    })
+
   });
-
-
+  // console.log(center);
+    
   var submitFrom = (function(cssForm){
     $(cssForm).on('submit', function(event){
       event.preventDefault();
       $target = $(event.target);
       var url = '/search';
       var data = $target.serialize()
-      $.post(url, data).done(function(data){
+      $.post(url, data).done(function(response){
         console.log(data);
       })
     })

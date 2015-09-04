@@ -1,10 +1,13 @@
 class HomeController < ApplicationController
   def index
+
   end
 
   def search
-    p params
-    byebug
+    locations = params["/search"]["Geolocation"].split
+    location = locations.map { |location| "address like '%#{location}%'" }.join(" OR ")
+    
+    
   end
 
   def user_data
