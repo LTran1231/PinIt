@@ -27,7 +27,7 @@ $(function(){
   map.doubleClickZoom.disable();
   map.scrollWheelZoom.disable();
 
-  Map.sendPostsCoordsToFB('/posts_data');
+  Map.sendPostsCoordsToFB('/pins');
   Map.setMarkers();
 
 
@@ -36,7 +36,6 @@ $(function(){
   // })
   
   Search.autoComplete('#_search_Geocomplete');
-  Search.submitFrom('.searchbar');
 
 });
 
@@ -58,7 +57,9 @@ var Map = (function(){
         (~~(Math.random() * 16)).toString(16),
         (~~(Math.random() * 16)).toString(16),
         (~~(Math.random() * 16)).toString(16)].join('');
-        var title = k;
+
+        postID = k;
+        var content = getPostData("/post_data");
 
         var postion = snap.val()[k].coords;
         var marker = L.marker(postion, {
@@ -67,16 +68,25 @@ var Map = (function(){
             'marker-symbol': 'post',
             'marker-color': color
           }),
-          title: title
+          content: content
         })
 
-        marker.bindPopup(title);
+        marker.bindPopup(content));
         markers.addLayer(marker);
 
       }
     })
     map.addLayer(markers);  
   });
+
+  var getPostData = (function(route) {
+    $.get(route, {postID: postID}).done(function(data){
+      // console.log(data);
+      title: data.title;
+
+
+    })
+  })
 
 
   return {
@@ -94,28 +104,29 @@ var Search = (function(){
     .bind("geocode:result", function(event, result){
       lat = result.geometry.location.lat(); 
       lng = result.geometry.location.lng();
-      map.setView(new L.LatLng(lat, lng), 8);
+      map.setView(new L.LatLng(lat, lng), 10);
+      $(cssForm).val("");
+
+      submitForm();
 
     })
+    // Trigger geocoding request.
+
 
   });
   // console.log(center);
     
-  var submitFrom = (function(cssForm){
-    $(cssForm).on('submit', function(event){
-      event.preventDefault();
-      $target = $(event.target);
-      var url = '/search';
-      var data = $target.serialize()
-      $.post(url, data).done(function(response){
-        console.log(data);
-      })
+  var submitForm = (function(){
+    var url = '/search';
+    $.post(url, {lat: lat, lng: lng}).done(function(data){
+      console.log(data);
     })
   })
 
+
   return {
     autoComplete: autoComplete,
-    submitFrom: submitFrom,
+    submitForm: submitForm,
   }
 
 })();
