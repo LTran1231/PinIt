@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
-  get 'user_data' => 'home#user_data'
+  get 'post_data' => 'home#post_data'
 
-  get 'posts_data' => 'home#posts_data'
+  get 'pins' => 'home#pins'
 
   post 'save_location' => 'locations#save_location'
 

@@ -1,16 +1,26 @@
 class HomeController < ApplicationController
   def index
+
   end
 
   def search
-    
+
+    # locations = params["/search"]["Geolocation"].split
+    p params
+    # location = locations.map { |location| "address like '%#{location}%'" }.join(" OR ")
+
+    # byebug
   end
 
-  def user_data
-    render json: current_user
+  def post_data
+    title = Post.find(params[:postID]).title
+    authorName = Post.find(params[:postID]).user.name
+    userID = Post.find(params[:postID]).user.id
+    travelDate = Post.find(params[:postID]).travel_date
+    render json: { title: title, authorName: authorName, userID: userID, travelDate: travelDate }
   end
 
-  def posts_data
+  def pins
     pins = Pin.all
     pinData = []
     pins.each do |pin|

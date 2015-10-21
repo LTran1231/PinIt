@@ -27,15 +27,10 @@ $(function(){
   map.doubleClickZoom.disable();
   map.scrollWheelZoom.disable();
 
-  Map.sendPostsCoordsToFB('/posts_data');
+  Map.sendPostsCoordsToFB('/pins');
   Map.setMarkers();
-
-
-  // $('.carousel').carousel({
-  //     interval: 10000 //changes the speed
-  // })
   
-  Search('#searchGeocomplete');
+  Search.submit('#_search_Geocomplete_');
 
 });
 
@@ -57,25 +52,36 @@ var Map = (function(){
         (~~(Math.random() * 16)).toString(16),
         (~~(Math.random() * 16)).toString(16),
         (~~(Math.random() * 16)).toString(16)].join('');
-        var title = k;
+
+        postID = k;
+        var content = getPostData("/post_data");
 
         var postion = snap.val()[k].coords;
         var marker = L.marker(postion, {
           draggable: false,
           icon: L.mapbox.marker.icon({
-            'marker-symbol': '',
+            'marker-symbol': 'post',
             'marker-color': color
           }),
-          title: title
+          content: content
         })
 
-        marker.bindPopup(title);
+        marker.bindPopup(content);
         markers.addLayer(marker);
 
       }
     })
     map.addLayer(markers);  
   });
+
+  var getPostData = (function(route) {
+    $.get(route, {postID: postID}).done(function(data){
+      // console.log(data);
+      title: data.title;
+
+
+    })
+  })
 
 
   return {
@@ -85,10 +91,39 @@ var Map = (function(){
   }
 })();
 
-var Search = (function(cssForm){
-  $(cssForm).geocomplete({
-  })
-});
+var Search = (function(){
+  var submit = (function(cssForm){
+    $(cssForm).geocomplete({
+
+    })
+    .bind("geocode:result", function(event, result){
+      lat = result.geometry.location.lat(); 
+      lng = result.geometry.location.lng();
+      latlng = L.LatLng(lat, lng);
+      map.setView(new L.LatLng(lat, lng), 6);
+      $(cssForm).val("");
+
+    })
+    // Trigger geocoding request.
+
+
+  });
+  // console.log(center);
+    
+  // var submitForm = (function(){
+  //   var url = '/search';
+  //   $.post(url, {lat: lat, lng: lng}).done(function(data){
+  //     console.log(data);
+  //   })
+  // })
+
+
+  return {
+    submit: submit,
+    // submitForm: submitForm,
+  }
+
+})();
 
 
 
