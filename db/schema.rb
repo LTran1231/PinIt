@@ -11,10 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150810225540) do
+ActiveRecord::Schema.define(version: 20150915204050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "clearance_batches", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "status"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string   "size"
+    t.string   "color"
+    t.string   "status"
+    t.decimal  "price_sold"
+    t.datetime "sold_at"
+    t.integer  "style_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "clearance_batch_id"
+  end
+
+  add_index "items", ["clearance_batch_id"], name: "index_items_on_clearance_batch_id", using: :btree
 
   create_table "locations", force: :cascade do |t|
     t.float    "lat"
@@ -44,6 +64,15 @@ ActiveRecord::Schema.define(version: 20150810225540) do
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
+
+  create_table "styles", force: :cascade do |t|
+    t.decimal  "wholesale_price"
+    t.decimal  "retail_price"
+    t.string   "type"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

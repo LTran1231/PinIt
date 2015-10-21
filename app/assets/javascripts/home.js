@@ -29,13 +29,8 @@ $(function(){
 
   Map.sendPostsCoordsToFB('/pins');
   Map.setMarkers();
-
-
-  // $('.carousel').carousel({
-  //     interval: 10000 //changes the speed
-  // })
   
-  Search.autoComplete('#_search_Geocomplete');
+  Search.submit('#_search_Geocomplete_');
 
 });
 
@@ -71,7 +66,7 @@ var Map = (function(){
           content: content
         })
 
-        marker.bindPopup(content));
+        marker.bindPopup(content);
         markers.addLayer(marker);
 
       }
@@ -97,17 +92,16 @@ var Map = (function(){
 })();
 
 var Search = (function(){
-  var autoComplete = (function(cssForm){
+  var submit = (function(cssForm){
     $(cssForm).geocomplete({
 
     })
     .bind("geocode:result", function(event, result){
       lat = result.geometry.location.lat(); 
       lng = result.geometry.location.lng();
-      map.setView(new L.LatLng(lat, lng), 10);
+      latlng = L.LatLng(lat, lng);
+      map.setView(new L.LatLng(lat, lng), 6);
       $(cssForm).val("");
-
-      submitForm();
 
     })
     // Trigger geocoding request.
@@ -116,17 +110,17 @@ var Search = (function(){
   });
   // console.log(center);
     
-  var submitForm = (function(){
-    var url = '/search';
-    $.post(url, {lat: lat, lng: lng}).done(function(data){
-      console.log(data);
-    })
-  })
+  // var submitForm = (function(){
+  //   var url = '/search';
+  //   $.post(url, {lat: lat, lng: lng}).done(function(data){
+  //     console.log(data);
+  //   })
+  // })
 
 
   return {
-    autoComplete: autoComplete,
-    submitForm: submitForm,
+    submit: submit,
+    // submitForm: submitForm,
   }
 
 })();
