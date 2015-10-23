@@ -54,19 +54,23 @@ var Map = (function(){
         (~~(Math.random() * 16)).toString(16)].join('');
 
         postID = k;
-        var content = getPostData("/post_data");
 
-        var postion = snap.val()[k].coords;
+        var postion = snap.val()[postID].coords;
+
         var marker = L.marker(postion, {
           draggable: false,
           icon: L.mapbox.marker.icon({
             'marker-symbol': 'post',
             'marker-color': color
           }),
-          content: content
+          // content: content
         })
-
-        marker.bindPopup(content);
+        $.get("/post_data", {postID: postID}).done(function(data){
+          title = data.title;
+          author = data.authorName;
+          date = data.travelDate;
+          marker.bindPopup("<b>"+title+"</b><br><i>"+author+"</i> | "+date );
+        })
         markers.addLayer(marker);
 
       }
@@ -74,20 +78,10 @@ var Map = (function(){
     map.addLayer(markers);  
   });
 
-  var getPostData = (function(route) {
-    $.get(route, {postID: postID}).done(function(data){
-      // console.log(data);
-      title: data.title;
-
-
-    })
-  })
-
 
   return {
     sendPostsCoordsToFB: sendPostsCoordsToFB,
     setMarkers: setMarkers,
-    // featureLayer: featureLayer
   }
 })();
 
