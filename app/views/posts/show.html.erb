@@ -26,5 +26,7 @@
 
 
 
-<%= link_to 'Edit', edit_user_post_path(@post.user, @post) %> |
-<%= link_to 'Back', user_posts_path(current_user) %>
+<% if current_user %>
+  <%= link_to 'Edit', edit_user_post_path(@post.user, @post) %> |
+  <%= link_to 'Back', user_posts_path(current_user) %>
+<% end %>

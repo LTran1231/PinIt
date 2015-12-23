@@ -66,11 +66,15 @@ var Map = (function(){
           // content: content
         })
         $.get("/post_data", {postID: postID}).done(function(data){
+
           title = data.title;
           author = data.authorName;
           date = data.travelDate;
-          marker.bindPopup("<b>"+title+"</b><br><i>"+author+"</i> | "+date );
+          postURL = "/users/" + data.userID + "/posts/" + postID
+          authorURL = "/users/" + data.userID + "/posts"
+          marker.bindPopup("<a href='"+postURL+"'><strong>"+title+"</strong></a><br><a href='"+authorURL+"'><i>"+author+"</i></a> | "+date );
         })
+        
         markers.addLayer(marker);
 
       }
