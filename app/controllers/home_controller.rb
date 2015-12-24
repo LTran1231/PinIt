@@ -17,7 +17,13 @@ class HomeController < ApplicationController
     authorName = Post.find(params[:postID]).user.name
     userID = Post.find(params[:postID]).user.id
     travelDate = Post.find(params[:postID]).travel_date
-    render json: { title: title, authorName: authorName, userID: userID, travelDate: travelDate }
+    content = Post.find(params[:postID]).content
+    if content.length > 10
+      description = truncate(content, length: 10)
+    else
+      description = content
+    end
+    render json: { title: title, authorName: authorName, userID: userID, content: description, travelDate: travelDate }
   end
 
   def pins

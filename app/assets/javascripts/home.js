@@ -70,9 +70,14 @@ var Map = (function(){
           title = data.title;
           author = data.authorName;
           date = data.travelDate;
-          postURL = "/users/" + data.userID + "/posts/" + postID
-          authorURL = "/users/" + data.userID + "/posts"
-          marker.bindPopup("<a href='"+postURL+"'><strong>"+title+"</strong></a><br><a href='"+authorURL+"'><i>"+author+"</i></a> | "+date );
+          content = data.content;
+          postURL = "/users/" + data.userID + "/posts/" + postID;
+          authorURL = "/users/" + data.userID + "/posts";
+          marker.bindPopup(
+            "<a href='"+postURL+"'><strong>"+title+"</strong></a><br>" +
+            "<a href='"+authorURL+"'><i>"+author+"</i></a> | " + date + "<br" +
+            "<section>"+content+"</section>"
+          );
         })
         
         markers.addLayer(marker);
