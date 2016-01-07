@@ -18,11 +18,9 @@ class HomeController < ApplicationController
     userID = Post.find(params[:postID]).user.id
     travelDate = Post.find(params[:postID]).travel_date
     content = Post.find(params[:postID]).content
-    if content.length > 10
-      description = truncate(content, length: 10)
-    else
-      description = content
-    end
+    byebug
+    
+
     render json: { title: title, authorName: authorName, userID: userID, content: description, travelDate: travelDate }
   end
 
