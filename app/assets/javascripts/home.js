@@ -53,7 +53,7 @@ var Map = (function(){
         (~~(Math.random() * 16)).toString(16),
         (~~(Math.random() * 16)).toString(16)].join('');
 
-        postID = k;
+        var postID = k;
 
         var postion = snap.val()[postID].coords;
 
@@ -67,16 +67,16 @@ var Map = (function(){
         })
         $.get("/post_data", {postID: postID}).done(function(data){
 
-          title = data.title;
-          author = data.authorName;
-          date = data.travelDate;
-          content = data.content;
-          postURL = "/users/" + data.userID + "/posts/" + postID;
-          authorURL = "/users/" + data.userID + "/posts";
+          var title = data.title;
+          var author = data.authorName;
+          var date = data.travelDate;
+          var content = data.content;
+          var postURL = "/users/" + data.userID + "/posts/" + postID;
+          var authorURL = "/users/" + data.userID + "/posts";
           marker.bindPopup(
             "<a href='"+postURL+"'><strong>"+title+"</strong></a><br>" +
-            "<a href='"+authorURL+"'><i>"+author+"</i></a> | " + date + "<br" +
-            "<section>"+content+"</section>"
+            "<a href='"+authorURL+"'><i>"+author+"</i></a> | " + date + "<br>" +
+            "<section>"+content+"<a href='"+postURL+"'>...</a></section>"
           );
         })
         
