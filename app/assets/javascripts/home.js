@@ -76,7 +76,7 @@ var Map = (function(){
           marker.bindPopup(
             "<a href='"+postURL+"'><strong>"+title+"</strong></a><br>" +
             "<a href='"+authorURL+"'><i>"+author+"</i></a> | " + date + "<br>" +
-            "<section>"+content+"<a href='"+postURL+"'>...</a></section>"
+            "<section class='popup-style'>"+content+"<a href='"+postURL+"'>...</a></section>"
           );
         })
         
