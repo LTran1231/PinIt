@@ -53,20 +53,45 @@ var Map = (function(){
         (~~(Math.random() * 16)).toString(16),
         (~~(Math.random() * 16)).toString(16)].join('');
 
-        postID = k;
-        var content = getPostData("/post_data");
+        var postID = k;
 
-        var postion = snap.val()[k].coords;
+        var postion = snap.val()[postID].coords;
+
         var marker = L.marker(postion, {
           draggable: false,
           icon: L.mapbox.marker.icon({
             'marker-symbol': 'post',
-            'marker-color': color
+            'marker-color': color,
           }),
-          content: content
+        })
+        $.get("/post_data", {postID: postID}).done(function(data){
+
+          var title = data.title;
+          var author = data.authorName;
+          var date = data.travelDate;
+          var content = data.content;
+          var postURL = "/users/" + data.userID + "/posts/" + postID;
+          var authorURL = "/users/" + data.userID + "/posts";
+          // var popup = L.popup({
+          //   maxHeight: 500
+          // })
+          // .setContent(
+          //   "<a href='"+postURL+"'><strong>"+title+"</strong></a><br>" +
+          //   "<a href='"+authorURL+"'><i>"+author+"</i></a> | " + date + "<br>" +
+          //   "<section class='popup-style'>"+content+"<a href='"+postURL+"'>...</a></section>"
+          // )
+          // marker.bindPopup(popup)
+          var popupContent = 
+            "<a href='"+postURL+"'><strong>"+title+"</strong></a><br>" +
+            "<a href='"+authorURL+"'><i>"+author+"</i></a> | " + date + "<br>" +
+            "<section class='popup-style'><div>"+content+"<a href='"+postURL+"'>...</a></div></section>"
+          marker.bindPopup(popupContent, {
+            minWidth: 200,
+            maxWidth: 500,
+            maxHeight: 200
+          })
         })
 
-        marker.bindPopup(content);
         markers.addLayer(marker);
 
       }
@@ -74,20 +99,10 @@ var Map = (function(){
     map.addLayer(markers);  
   });
 
-  var getPostData = (function(route) {
-    $.get(route, {postID: postID}).done(function(data){
-      // console.log(data);
-      title: data.title;
-
-
-    })
-  })
-
 
   return {
     sendPostsCoordsToFB: sendPostsCoordsToFB,
     setMarkers: setMarkers,
-    // featureLayer: featureLayer
   }
 })();
 
