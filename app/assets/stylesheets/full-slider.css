@@ -51,11 +51,6 @@ nav {
   border-bottom-right-radius: 0;
 }
 
-.searchbar button {
-  height: 45px;
-}
-
-
 #searchGeocomplete {
   background-color: rgba(248, 248, 248, 0.63);
 }

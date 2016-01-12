@@ -3,15 +3,6 @@ class HomeController < ApplicationController
 
   end
 
-  def search
-
-    # locations = params["/search"]["Geolocation"].split
-    p params
-    # location = locations.map { |location| "address like '%#{location}%'" }.join(" OR ")
-
-    # byebug
-  end
-
   def post_data
     title = Post.find(params[:postID]).title
     authorName = Post.find(params[:postID]).user.name
