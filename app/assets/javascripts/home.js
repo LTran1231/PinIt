@@ -61,9 +61,8 @@ var Map = (function(){
           draggable: false,
           icon: L.mapbox.marker.icon({
             'marker-symbol': 'post',
-            'marker-color': color
+            'marker-color': color,
           }),
-          // content: content
         })
         $.get("/post_data", {postID: postID}).done(function(data){
 
@@ -73,13 +72,26 @@ var Map = (function(){
           var content = data.content;
           var postURL = "/users/" + data.userID + "/posts/" + postID;
           var authorURL = "/users/" + data.userID + "/posts";
-          marker.bindPopup(
+          // var popup = L.popup({
+          //   maxHeight: 500
+          // })
+          // .setContent(
+          //   "<a href='"+postURL+"'><strong>"+title+"</strong></a><br>" +
+          //   "<a href='"+authorURL+"'><i>"+author+"</i></a> | " + date + "<br>" +
+          //   "<section class='popup-style'>"+content+"<a href='"+postURL+"'>...</a></section>"
+          // )
+          // marker.bindPopup(popup)
+          var popupContent = 
             "<a href='"+postURL+"'><strong>"+title+"</strong></a><br>" +
             "<a href='"+authorURL+"'><i>"+author+"</i></a> | " + date + "<br>" +
-            "<section class='popup-style'>"+content+"<a href='"+postURL+"'>...</a></section>"
-          );
+            "<section class='popup-style'><div>"+content+"<a href='"+postURL+"'>...</a></div></section>"
+          marker.bindPopup(popupContent, {
+            minWidth: 200,
+            maxWidth: 500,
+            maxHeight: 200
+          })
         })
-        
+
         markers.addLayer(marker);
 
       }
